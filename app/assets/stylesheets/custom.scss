@@ -18,16 +18,21 @@
   width: 100%;
 }
 
+.main-wrapper{
+  height: 550px;
+}
+
 //Top Page//
 .top-page {
   background-color: #fff;
   width: 50%;
   float: right;
   padding: 15px;
+  border: 2px solid #999999;
   h1 {
     font-size: 30px;
   }
-  sign-up {
+  .sign-up {
     width: 100%;
     margin: 0 auto;
   }
@@ -35,7 +40,6 @@
 
 //User Info//
 .user-info {
-  background-color: #ffffff;
 }
 
 .profile {
