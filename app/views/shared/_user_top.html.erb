@@ -1,0 +1,59 @@
+<div class="user-info">
+  <div class="profile">
+    <div class="name-box">
+      <%= current_user.name %>
+    </div>
+    <div class="start-info">
+      <table style="border-collapse: collapse; width: 100%;">
+        <tbody>
+        <tr>
+          <td style="width: 50%; text-align: center;" colspan="2" >開始時</td>
+        </tr>
+        <tr>
+          <td style="width: 20%;">日　　時:</td>
+          <td style="width: 20%;"><%= current_user.started_at %></td>
+        </tr>
+        <tr>
+          <td style="width: 20%;">体　　重:</td>
+          <td style="width: 20%;"><%= current_user.weight %>kg</td>
+        </tr>
+        <tr>
+          <td style="width: 20%;">体脂肪率:</td>
+          <td style="width: 20%;"><%= current_user.body_fat_percentage %>%</td>
+        </tr>
+        <tr>
+          <td style="width: 20%;">目　　標:</td>
+          <td style="width: 20%;"><%= current_user.aim %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="current_info">
+      <table style="border-collapse: collapse; width: 100%;">
+        <tbody>
+        <tr>
+          <td style="width: 50%; text-align: center;" colspan="2">現在</td>
+        </tr>
+        <tr>
+          <td style="width: 20%;">残日数　:</td>
+          <td style="width: 20%;"><%= current_user.started_at %></td>
+        </tr>
+        <tr>
+          <td style="width: 20%;">体　　重:</td>
+          <td style="width: 20%;"><%= current_user.weight %>kg</td>
+        </tr>
+        <tr>
+          <td style="width: 20%;">体脂肪率:</td>
+          <td style="width: 20%;"><%= current_user.body_fat_percentage %>%</td>
+        </tr>
+        <tr>
+          <td style="width: 20%;">目　　標:</td>
+          <td style="width: 20%;"><%= current_user.aim %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<%= link_to "Delete", user_registration_path, method: :delete, data: { confirm: "You sure?" } %><br/>

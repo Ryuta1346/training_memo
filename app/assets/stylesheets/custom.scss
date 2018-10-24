@@ -1,1 +1,74 @@
 @import "bootstrap";
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 24px;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+.landding-page {
+  background-image: image_url("crossfit-534615_1920.jpg");
+  background-size: cover;
+  height: 700px;
+  width: 100%;
+}
+
+//Top Page//
+.top-page {
+  background-color: #fff;
+  width: 50%;
+  float: right;
+  padding: 15px;
+  h1 {
+    font-size: 30px;
+  }
+  sign-up {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+//User Info//
+.user-info {
+  background-color: #ffffff;
+}
+
+.profile {
+  width: 50%;
+  height: 200px;
+  padding: 0.5em 1em;
+  margin: 0 auto;
+  color: #00BCD4;
+  background: #e4fcff; /*背景色*/
+  border-top: solid 6px #1dc1d6;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32); /*影*/
+  .name-box {
+    text-align: center;
+    border-bottom: 1px solid #1dc1d6;
+  }
+
+  .start-info {
+    font-size: 14px;
+    font-weight: bold;
+    width: 50%;
+    float: left;
+    border-right: 1px solid #1dc1d6;
+    padding: 5px;
+  }
+
+  .current_info {
+    font-size: 14px;
+    font-weight: bold;
+    width: 50%;
+    float: right;
+    padding: 5px;
+  }
+}
+
+
+
