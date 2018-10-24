@@ -47,9 +47,13 @@
   background: #e4fcff; /*背景色*/
   border-top: solid 6px #1dc1d6;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32); /*影*/
-  .name-box {
+  .profile-top {
     text-align: center;
+    font-weight: bold;
     border-bottom: 1px solid #1dc1d6;
+    .aim{
+      font-weight: bold;
+    }
   }
 
   .start-info {
@@ -70,5 +74,21 @@
   }
 }
 
+.btn-position{
+  margin-top: 20px;
+  text-align: right;
+}
+
+//footer//
+footer{
+  padding-top: 20px;
+  float: right;
+}
+
+//Edit User//
+.edit-user{
+  width: 100%;
+  margin: 0 auto;
+}
 
 

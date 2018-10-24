@@ -1,6 +1,5 @@
 <% if user_signed_in? %>
   <%= render 'shared/user_top' %>
-  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
 <% else %>
   <div class="top-page">
     <h1>Welcome to "100Days of Training"!</h1>
