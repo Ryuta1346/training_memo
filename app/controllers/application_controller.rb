@@ -32,8 +32,12 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_in, keys: [:weight])
     devise_parameter_sanitizer.permit(:account_update, keys: [:weight])
 
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:body_fat_percentage])
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:body_fat_percentage])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:body_fat_percentage])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:bmi])
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:bmi])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:bmi])
+
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:height])
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:height])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:height])
   end
 end

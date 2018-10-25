@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_24_165344) do
+ActiveRecord::Schema.define(version: 2018_10_25_170341) do
 
   create_table "posts", force: :cascade do |t|
     t.float "weight"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2018_10_24_165344) do
     t.string "aim"
     t.float "weight"
     t.float "bmi"
+    t.float "height"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

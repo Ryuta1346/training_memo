@@ -4,12 +4,12 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <%= f.label :本日の体重 %><br/>
-        <%= f.number_field :weight %>kg
+        <%= f.text_field :weight %>kg
       </div>
-      <div class="form-group col-md-6">
-        <%= f.label :本日のBMI指数 %><br/>
-        <%= f.number_field :bmi %>%
-      </div>
+<!--      <div class="form-group col-md-6">-->
+<!--        <%#= f.label :本日のBMI指数 %><br/>-->
+<!--        <%#= f.number_field :bmi %>%-->
+<!--      </div>-->
     </div>
     <div class="form-group">
       <%= f.text_area :content, placeholder: "Compose new Post", class: "content-field" %>
