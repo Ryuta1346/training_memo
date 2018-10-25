@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
-  get 'about',      to: 'statci_pages#about'
-  get 'help',       to: 'statci_pages#help'
-  get 'contact',    to: 'statci_pages#contact'
+  get 'about',      to: 'static_pages#about'
+  get 'help',       to: 'static_pages#help'
+  get 'contact',    to: 'static_pages#contact'
 
   devise_for :users
 
