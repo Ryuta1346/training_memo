@@ -1,0 +1,22 @@
+<div class="post-form">
+  <h2><%= @today %>日目</h2>
+  <%= form_for(@post) do |f| %>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <%= f.label :本日の体重 %><br/>
+        <%= f.number_field :weight %>kg
+      </div>
+      <div class="form-group col-md-6">
+        <%= f.label :本日の体脂肪率 %><br/>
+        <%= f.number_field :body_fat_percentage %>%
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.text_area :content, placeholder: "Compose new Post", class: "content-field" %>
+    </div>
+    <div class="form-group">
+      <%= f.date_select :date %>
+    </div>
+    <%= f.submit "Post", class: "btn btn-success" %>
+  <% end %>
+</div>

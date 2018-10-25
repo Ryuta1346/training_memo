@@ -1,3 +1,7 @@
+<% if flash[:danger] || flash[:success] %>
+  <p><%= flash[:danger] || flash[:success] = "" %></p>
+<% end %>
+
 <div class="user-info">
   <div class="profile">
     <div class="profile-top">
@@ -33,15 +37,15 @@
         </tr>
         <tr>
           <td style="width: 20%;">残日数　:</td>
-          <td style="width: 20%;"><%= current_user.started_at %></td>
+          <td style="width: 20%;"><%= 100 - @posts.ids.count %>日</td>
         </tr>
         <tr>
           <td style="width: 20%;">体　　重:</td>
-          <td style="width: 20%;"><%= current_user.weight %>kg</td>
+          <td style="width: 20%;"><%= current_user.posts.last.weight %>kg</td>
         </tr>
         <tr>
           <td style="width: 20%;">体脂肪率:</td>
-          <td style="width: 20%;"><%= current_user.body_fat_percentage %>%</td>
+          <td style="width: 20%;"><%= current_user.posts.last.body_fat_percentage %>%</td>
         </tr>
         </tbody>
       </table>
@@ -52,7 +56,10 @@
     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-warning" %>
     <%= link_to "Delete Account", user_registration_path, class: "btn btn-danger", method: :delete, data: { confirm: "You sure?" } %>
   </div>
-  <div>
-    <% render 'shared/post_form' %>
-  </div>
+</div>
+<div class="container">
+  <%= render 'shared/post_form' %>
+</div>
+<div class="card-feed">
+  <%= render 'posts/post' %>
 </div>
