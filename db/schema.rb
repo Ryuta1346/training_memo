@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2018_10_24_165344) do
 
   create_table "posts", force: :cascade do |t|
     t.float "weight"
-    t.float "body_fat_percentage"
+    t.float "bmi"
     t.text "content"
     t.integer "user_id"
     t.datetime "created_at", null: false
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2018_10_24_165344) do
     t.date "finished_at"
     t.string "aim"
     t.float "weight"
-    t.float "body_fat_percentage"
+    t.float "bmi"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

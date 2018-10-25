@@ -2,7 +2,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
   def change
     create_table :posts do |t|
       t.float :weight
-      t.float :body_fat_percentage
+      t.float :bmi
       t.text :content
       t.references :user, foreign_key: true
 
