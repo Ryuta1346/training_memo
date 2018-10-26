@@ -1,5 +1,9 @@
 @import "bootstrap";
 
+*{
+  box-sizing: border-box;
+}
+
 li {
   list-style: none;
 }
@@ -89,7 +93,7 @@ li {
 //footer//
 footer{
   padding-top: 20px;
-  float: right;
+  text-align: center;
 }
 
 //Edit User//
@@ -130,4 +134,10 @@ footer{
 .post-img{
   width: 70%;
   margin: 0 auto;
+}
+
+@media (max-width: 670px){
+  .btn {
+    width: 80%;
+  }
 }
