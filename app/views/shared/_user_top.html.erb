@@ -24,7 +24,8 @@
         </tr>
         <tr>
           <td style="width: 20%;">B　M　I:</td>
-          <td style="width: 20%;"><%= (current_user.weight/current_user.height/current_user.height).round(2) %>%</td>
+          <td style="width: 20%;"><%= (current_user.weight / current_user.height / current_user.height).round(2) %>%
+          </td>
         </tr>
         </tbody>
       </table>
@@ -41,11 +42,13 @@
         </tr>
         <tr>
           <td style="width: 20%;">体　　重:</td>
-          <td style="width: 20%;"><%= @posts.last.weight %>kg</td>
+          <td style="width: 20%;"><%= @recent_weight if @posts.any? %>kg</td>
         </tr>
         <tr>
           <td style="width: 20%;">B　M　I:</td>
-          <td style="width: 20%;"><%= (@posts.last.weight/current_user.height/current_user.height).round(2) %>%</td>
+          <td style="width: 20%;"><%= @recent_bmi if @posts.any? %>
+            %
+          </td>
         </tr>
         </tbody>
       </table>
@@ -61,5 +64,5 @@
   <%= render 'shared/post_form' %>
 </div>
 <div class="card-feed">
-  <%= render 'posts/post' %>
+  <%= render @post %>
 </div>

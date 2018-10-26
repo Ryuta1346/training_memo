@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
+    @posts = Post.all
   end
 
   def show
@@ -27,6 +28,6 @@ class PostsController < ApplicationController
   private
 
   def post_parameter
-    params.require(:post).permit(:content, :weight, :body_fat_percentage, :date)
+    params.require(:post).permit(:content, :weight, :height, :date, :aim, :bmi)
   end
 end
