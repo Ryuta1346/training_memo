@@ -163,5 +163,18 @@ footer {
 }
 
 @media (max-width: 670px) {
-
+  .top-page {
+    font-size: 12px;
+    background-color: #fff;
+    width: 100%
+    padding: 15px;
+    border: 2px solid #999999;
+    h1 {
+      font-size: 24px;
+    }
+    .sign-up {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
 }
