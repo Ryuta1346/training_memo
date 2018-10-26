@@ -140,4 +140,135 @@ footer{
   .btn {
     width: 80%;
   }
+  li {
+    list-style: none;
+  }
+
+  #logo {
+    float: left;
+    margin-right: 10px;
+    font-size: 24px;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    padding-top: 9px;
+    font-weight: bold;
+  }
+
+  .landding-page {
+    background-image: image_url("crossfit-534615_1920.jpg");
+    background-size: cover;
+    width: 100%;
+  }
+
+  .main-wrapper{
+    height: 550px;
+  }
+
+  //Top Page//
+  .top-page {
+    background-color: #fff;
+    width: 50%;
+    float: right;
+    padding: 15px;
+    border: 2px solid #999999;
+    h1 {
+      font-size: 30px;
+    }
+    .sign-up {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  //User Info//
+  .user-info {
+  }
+
+  .profile {
+    width: 50%;
+    height: 200px;
+    padding: 0.5em 1em;
+    margin: 0 auto;
+    color: #00BCD4;
+    background: #e4fcff; /*背景色*/
+    border-top: solid 6px #1dc1d6;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32); /*影*/
+    .profile-top {
+      text-align: center;
+      font-weight: bold;
+      border-bottom: 1px solid #1dc1d6;
+      .aim{
+        font-weight: bold;
+      }
+    }
+
+    .start-info {
+      font-size: 14px;
+      font-weight: bold;
+      width: 50%;
+      float: left;
+      border-right: 1px solid #1dc1d6;
+      padding: 5px;
+    }
+
+    .current_info {
+      font-size: 14px;
+      font-weight: bold;
+      width: 50%;
+      float: right;
+      padding: 5px;
+    }
+  }
+
+  .btn-position{
+    margin-top: 20px;
+    text-align: right;
+  }
+
+  //footer//
+  footer{
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  //Edit User//
+  .edit-user{
+    width: 100%;
+    margin: 0 auto;
+  }
+
+
+  //Post Form//
+  .post-form{
+    width: 60%;
+    padding-top: 30px;
+    text-align: center;
+    margin: 0 auto;
+    .content-field{
+      width: 80%;
+      height: 50px;
+    }
+  }
+
+  //Post//
+  .card-feed{
+    padding-top: 30px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .card{
+    width: 25%;
+    float: left;
+  }
+
+  .feed-img{
+    width: 100%;
+  }
+
+  .post-img{
+    width: 70%;
+    margin: 0 auto;
+  }
 }
