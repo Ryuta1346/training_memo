@@ -163,6 +163,12 @@ footer {
 }
 
 @media (max-width: 670px) {
+  .landding-page {
+    background-image: image_url("crossfit-534615_1920.jpg");
+    background-size: cover;
+    width: 100%;
+  }
+
   .top-page {
     font-size: 12px;
     background-color: #fff;
