@@ -1,5 +1,5 @@
 <div class="post-form">
-  <h2><%= @today %>日目</h2>
+  <h2><%= (Date.today - @posts.last.date + 1).to_i %>日目</h2>
   <%= form_for(@post) do |f| %>
     <div class="form-row">
       <div class="form-group col-md-6">
