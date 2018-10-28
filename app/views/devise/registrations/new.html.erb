@@ -6,6 +6,8 @@
 
     <div class="form-group col-md-8">
       <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Name" %>
+    </div>
+    <div class="form-group col-md-8">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
     </div>
 
@@ -14,6 +16,8 @@
         <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br/>
       <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
+    </div>
+    <div class="form-group col-md-8">
       <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password Confirmation" %>
     </div>
 
@@ -24,9 +28,9 @@
 
     <div class="form-group col-md-8">
       <%= f.text_field :weight, autofocus: true, placeholder: "開始時の体重" %>kg
-      <%= f.text_field :height, autofocus: true, placeholder:"身長(*m表記)" %>m
-<!--      <%#= f.text_field :bmi, autofocus: true, placeholder: "開始時のBMI指数" %>%<br />-->
-<!--      <p style="font-size: 12px">*BMI指数 = 体重(kg) / 身長(m) / 身長(m)<br />->標準:22, 肥満:25以上</p>-->
+    </div>
+    <div class="form-group col-md-8">
+      <%= f.text_field :height, autofocus: true, placeholder: "身長(*m表記)" %>m
     </div>
 
     <div class="form-group col-md-8">

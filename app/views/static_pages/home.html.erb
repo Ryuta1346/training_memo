@@ -3,15 +3,17 @@
   <%= render 'shared/post_form' %>
   <%= render @post %>
 <% else %>
-  <div class="top-page">
-    <h1>Welcome to "100Days of Training"!</h1>
-    <p>今日からあなたの100日間のトレーニングが始まります。</p>
-    <p>ダイエットでも、マラソンでも、目的はなんでもOK。</p>
-    <P>ここにはあなたと同じように、"100日間トレーニングを続ける"という共通した仲間がたくさん集まっています。</p>
-    <p>仲間のトレーニング報告をみて、あなたもトレーニング報告をして、辛い時間も、達成感も、多くの仲間と共有していきましょう。</p>
-    <div class="sign-up">
-      <%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-lg btn-primary" %><br/>
-      <%= link_to "Log In", new_user_session_path %><br/>
+  <div class="landding-page">
+    <div class="top-page">
+      <h1>Welcome to "100Days of Training"!</h1>
+      <p>今日からあなたの100日間のトレーニングが始まります。</p>
+      <p>ダイエットでも、マラソンでも、目的はなんでもOK。</p>
+      <P>ここにはあなたと同じように、"100日間トレーニングを続ける"という共通した仲間がたくさん集まっています。</p>
+      <p>仲間のトレーニング報告をみて、あなたもトレーニング報告をして、辛い時間も、達成感も、多くの仲間と共有していきましょう。</p>
+      <div class="sign-up">
+        <%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-lg btn-primary" %><br/>
+        <%= link_to "Log In", new_user_session_path %><br/>
+      </div>
     </div>
   </div>
 <% end %>
