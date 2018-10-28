@@ -30,6 +30,10 @@ li {
   font-weight: bold;
 }
 
+.flash{
+  background-color: lightcyan;
+}
+
 //Top Page//
 .landding-page {
   background-image: image_url("crossfit-534615_1920.jpg");
@@ -183,6 +187,7 @@ footer {
   margin: 0 auto;
 }
 
+//スマホ//
 @media (max-width: 670px) {
   .landding-page {
     background-image: image_url("crossfit-534615_1920.jpg");
@@ -266,5 +271,9 @@ footer {
       height: 100px;
       border-radius: 5px;
     }
+  }
+
+  .card-show{
+    width: 100%;
   }
 }
