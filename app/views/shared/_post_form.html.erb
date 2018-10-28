@@ -1,5 +1,5 @@
 <div class="post-form">
-  <h2>本日:<%= ((Date.today - current_user.started_at) + 1).to_i %>/100日目</h2>
+  <h2>本日:<%= @by_last %>/100日目</h2>
   <%= form_for(@post) do |f| %>
     <div class="form-row">
       <div class="form-group col-md-6">
