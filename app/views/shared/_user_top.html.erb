@@ -1,7 +1,4 @@
-<% if flash[:danger] || flash[:success] %>
-  <p><%= flash[:danger] || flash[:success] = "" %></p>
-<% end %>
-
+<%= render 'shared/flash' %>
 <div class="user-info">
   <div class="profile">
     <div class="profile-top">

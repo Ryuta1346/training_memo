@@ -8,6 +8,18 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update_attributes(post_parameter)
+      flash[:success] = "Post Updated!"
+      redirect_to post_url
+    else
+      flash[:danger] = "Post Update is invalid!"
+      render 'edit'
+    end
   end
 
   def new
@@ -27,7 +39,7 @@ class PostsController < ApplicationController
 
   private
 
-  def post_parameter
-    params.require(:post).permit(:content, :weight, :height, :date, :aim, :bmi)
-  end
+    def post_parameter
+      params.require(:post).permit(:content, :weight, :height, :date, :aim, :bmi, :training)
+    end
 end

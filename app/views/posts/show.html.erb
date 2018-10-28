@@ -1,25 +1,38 @@
-<%= image_tag 'crossfit-534615_1920.jpg', class: "post-img" %>
-<div class="card-body">
-  <h4 class="card-title"><%= @post.id %>日目</h4>
-  <p class="card-text">
-  <table style="border-collapse: collapse; width: 100%;">
-    <tbody>
-    <tr>
-      <td style="width: 20%;">日　　時:</td>
-      <td style="width: 20%;"><%= @post.date %></td>
-    </tr>
-    <tr>
-      <td style="width: 20%;">体　　重:</td>
-      <td style="width: 20%;"><%= @post.weight %>kg</td>
-    </tr>
-    <tr>
-      <td style="width: 20%;">体脂肪率:</td>
-      <td style="width: 20%;"><%= @post.body_fat_percentage %>%</td>
-    </tr>
-    </tbody>
-  </table>
-  コメント:<%= @post.content %>
-  <div class="timestamp"><%= time_ago_in_words(@post.created_at) %> ago.</div>
-  </p>
+<%= render 'shared/flash' %>
+<div class="card-show">
+  <%= image_tag 'crossfit-534615_1920.jpg', class: "post-img" %>
+  <div class="card-body">
+    <h4 class="card-title"><%= @post.id %>日目</h4>
+    <table class="card-text" style="border-collapse: collapse; width: 60%;">
+      <tbody>
+      <tr class="card-in-table">
+        <td style="width: 20%;"><strong>日　　時:</strong></td>
+        <td style="width: 20%;"><%= @post.date %></td>
+      </tr>
+      <tr class="card-in-table">
+        <td style="width: 20%;"><strong>体　　重:</strong></td>
+        <td style="width: 20%;"><%= @post.weight %>kg</td>
+      </tr>
+      <tr class="card-in-table">
+        <td style="width: 20%;"><strong>B　M　I:</strong></td>
+        <td style="width: 20%;"><%= (@post.weight / current_user.height / current_user.height).round(2) %>%</td>
+      </tr>
+      <tr>
+        <td class="content-in-card" style="text-align: center;" colspan="2"><strong>トレーニング内容</strong></td>
+      </tr>
+      <tr>
+        <td class="card-in-table" style="text-align: center; height: 100px;" colspan="2"><%= @post.training %></td>
+      </tr>
+      <tr>
+        <td class="content-in-card" style="text-align: center;" colspan="2"><strong>メモ</strong></td>
+      </tr>
+      <tr>
+        <td class="card-in-table" style="text-align: center; height: 100px;" colspan="2"><%= @post.content %></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="timestamp"><%= time_ago_in_words(@post.created_at) %> ago.</div>
+  </div>
+  <%= link_to "Edit Post", edit_post_path, class:"btn btn-info" %>
+  <%= link_to "Return Home", root_path, class:"btn btn-success" %>
 </div>
-

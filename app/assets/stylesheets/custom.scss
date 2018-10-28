@@ -140,6 +140,25 @@ footer {
 }
 
 //Post//
+.card-show {
+  width: 80%;
+  height: 100%;
+  height: auto !important;
+  margin: 0 auto;
+  text-align: center;
+
+  .card-text{
+    margin: 0 auto;
+    .card-in-table{
+      border-bottom: #999999 3px solid;
+    }
+    .content-in-card{
+      border-bottom: 1px solid #999999;
+      background-color: #DADADA;
+    }
+  }
+}
+
 .card-feed {
   padding-top: 30px;
   width: 100%;

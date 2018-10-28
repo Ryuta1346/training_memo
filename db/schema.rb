@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_25_170341) do
+ActiveRecord::Schema.define(version: 2018_10_28_140831) do
 
   create_table "posts", force: :cascade do |t|
     t.float "weight"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2018_10_25_170341) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "date"
+    t.text "training"
     t.index ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
