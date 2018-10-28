@@ -7,7 +7,7 @@ class StaticPagesController < ApplicationController
       @recent_weight  = @posts.any? ? current_user.posts.first.weight : current_user.weight
       @recent_bmi     = @posts.any? ? ((current_user.posts.first.weight).to_f / (current_user.height).to_f / (current_user.height).to_f).round(2) : @first_bmi
       @by_achievement = ((@posts.any? ? @recent_weight : current_user.weight).to_f - (current_user.aim).to_f).round(2)
-      @by_last        = ((Date.today) - current_user.started_at).to_i
+      @by_last        = ((Date.today) - current_user.started_at + 1).to_i
     end
   end
 
