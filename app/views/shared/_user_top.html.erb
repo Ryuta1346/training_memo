@@ -6,7 +6,8 @@
   <div class="profile">
     <div class="profile-top">
       <%= current_user.name %><br/>
-      <p class="aim">【目標:<%= current_user.aim %>】</p>
+      <p class="aim">【目標:<%= current_user.aim %>kg】</p>
+      <p class="aim">【達成まで:<%= ((@recent_weight if @posts.any?) - (current_user.aim)).round(2) %>kg】</p>
     </div>
     <div class="start-info">
       <table style="border-collapse: collapse; width: 100%;">

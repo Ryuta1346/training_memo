@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2018_10_25_170341) do
     t.string "name"
     t.date "started_at"
     t.date "finished_at"
-    t.string "aim"
+    t.float "aim"
     t.float "weight"
     t.float "bmi"
     t.float "height"
