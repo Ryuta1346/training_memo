@@ -212,39 +212,16 @@ footer {
 
   .profile {
     width: 100%;
-    height: 250px;
-    padding: 0.5em 1em;
-    margin: 0 auto;
-    color: #00BCD4;
-    background: #e4fcff; /*背景色*/
-    border-top: solid 6px #1dc1d6;
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32); /*影*/
-    .profile-top {
-      text-align: center;
-      font-weight: bold;
-      border-bottom: 1px solid #1dc1d6;
-      .aim {
-        font-weight: bold;
       }
     }
 
     .start-info {
       font-size: 12px;
-      font-weight: bold;
-      width: 50%;
-      float: left;
-      border-right: 1px solid #1dc1d6;
-      padding: 5px;
     }
 
     .current_info {
-      font-size: 14px;
-      font-weight: bold;
-      width: 50%;
-      float: right;
-      padding: 5px;
+      font-size: 12px;
     }
-  }
 
   .btn-position {
     margin-top: 20px;
