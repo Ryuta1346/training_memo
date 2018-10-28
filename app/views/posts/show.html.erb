@@ -2,7 +2,7 @@
 <div class="card-show">
   <%= image_tag 'crossfit-534615_1920.jpg', class: "post-img" %>
   <div class="card-body">
-    <h4 class="card-title"><%= @post.id %>日目</h4>
+    <h4 class="card-title"><%= (@post.date - @posts.last.date + 1).to_i %>日目</h4>
     <table class="card-text" style="border-collapse: collapse; width: 60%;">
       <tbody>
       <tr class="card-in-table">
@@ -21,13 +21,13 @@
         <td class="content-in-card" style="text-align: center;" colspan="2"><strong>トレーニング内容</strong></td>
       </tr>
       <tr>
-        <td class="card-in-table" style="text-align: center; height: 100px;" colspan="2"><%= @post.training %></td>
+        <td class="card-in-table" style="text-align: center; height: 100px;" colspan="2"><%= simple_format(@post.training) %></td>
       </tr>
       <tr>
         <td class="content-in-card" style="text-align: center;" colspan="2"><strong>メモ</strong></td>
       </tr>
       <tr>
-        <td class="card-in-table" style="text-align: center; height: 100px;" colspan="2"><%= @post.content %></td>
+        <td class="card-in-table" style="text-align: center; height: 100px;" colspan="2"><%= simple_format(@post.content) %></td>
       </tr>
       </tbody>
     </table>
