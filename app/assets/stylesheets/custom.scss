@@ -134,9 +134,14 @@ footer {
   padding-top: 30px;
   text-align: center;
   margin: 0 auto;
+  .base_info{
+    width: 100%;
+    margin: 0 auto;
+  }
   .weight-field {
     border-radius: 5px;
     border: 1px solid #000000;
+    width: 100%;
   }
   .content-field {
     width: 80%;

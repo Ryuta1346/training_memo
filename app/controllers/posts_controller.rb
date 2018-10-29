@@ -23,9 +23,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def new
-  end
-
   def create
     @post = current_user.posts.build(post_parameter)
     if @post.save
@@ -41,6 +38,6 @@ class PostsController < ApplicationController
   private
 
     def post_parameter
-      params.require(:post).permit(:content, :weight, :height, :date, :aim, :bmi, :training)
+      params.require(:post).permit(:content, :weight, :height, :date, :aim, :bmi, :training, :image)
     end
 end

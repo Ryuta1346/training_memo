@@ -1,6 +1,6 @@
 <%= render 'shared/flash' %>
 <div class="card-show">
-  <%= image_tag 'crossfit-534615_1920.jpg', class: "post-img" %>
+  <%= image_tag @post.image.url(:large) %>
   <div class="card-body">
     <h4 class="card-title"><%= (@post.date - @posts.last.date + 1).to_i %>日目</h4>
     <table class="card-text" style="border-collapse: collapse;">

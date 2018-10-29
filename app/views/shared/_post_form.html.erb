@@ -1,9 +1,15 @@
 <div class="post-form">
   <h2>本日:<%= @by_last %>/100日目</h2>
   <%= form_for(@post) do |f| %>
-    <div class="form-group col-md-6">
-      <%= f.label :本日の体重 %><br/>
-      <%= f.text_field :weight, class: "weight-field" %>kg
+    <div class="form-row">
+      <div class="form-group col-md-3 base_info">
+        <%= f.label :本日の体重 %><br/>
+        <%= f.text_field :weight, class: "weight-field" %>kg
+      </div>
+      <div class="form-group col-md-6 base_info">
+        <%= f.label :Photo %>
+        <%= f.file_field :image %>
+      </div>
     </div>
     <div class="form-group">
       <%= f.text_area :training, placeholder: "トレーニング内容", class: "content-field" %>
