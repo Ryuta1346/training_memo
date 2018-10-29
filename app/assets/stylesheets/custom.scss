@@ -217,11 +217,11 @@ footer {
   }
 
   .start-info {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .current_info {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .btn-position {
@@ -251,7 +251,26 @@ footer {
     }
   }
 
-  //Post//
+  //Post#show//
+  .card-show {
+    width: 100%;
+    .card-body {
+      width: 100%;
+    }
+  }
+
+  .card-text {
+    width: 100%;
+    margin: 0 auto;
+    .card-in-table {
+      border-bottom: #999999 3px solid;
+    }
+    .content-in-card {
+      border-bottom: 1px solid #999999;
+      background-color: #DADADA;
+    }
+  }
+
   .card-feed {
     padding-top: 30px;
     width: 100%;
