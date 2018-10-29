@@ -154,6 +154,7 @@ footer {
   text-align: center;
 
   .card-text {
+    width: 100%;
     margin: 0 auto;
     .card-in-table {
       border-bottom: #999999 3px solid;
@@ -254,18 +255,18 @@ footer {
   .card-show {
     width: 100%;
     .card-body {
-      width: 100%;
-    }
+      max-width: 670px;
 
-    .card-text {
-      width: 100%;
-      margin: 0 auto;
-      .card-in-table {
-        border-bottom: #999999 3px solid;
-      }
-      .content-in-card {
-        border-bottom: 1px solid #999999;
-        background-color: #DADADA;
+      .card-text {
+        width: 100%;
+        margin: 0 auto;
+        .card-in-table {
+          border-bottom: #999999 3px solid;
+        }
+        .content-in-card {
+          border-bottom: 1px solid #999999;
+          background-color: #DADADA;
+        }
       }
     }
   }
