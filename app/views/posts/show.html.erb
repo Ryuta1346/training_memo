@@ -4,7 +4,7 @@
   <div class="card-body">
     <h4 class="card-title"><%= (@post.date - @posts.last.date + 1).to_i %>日目</h4>
     <table class="card-text" style="border-collapse: collapse; width: 60%;">
-      <tbody>
+      <tbody class="card-text">
       <tr class="card-in-table">
         <td style="width: 20%;"><strong>日　　時:</strong></td>
         <td style="width: 20%;"><%= @post.date %></td>
