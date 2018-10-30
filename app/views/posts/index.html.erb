@@ -1,11 +1,18 @@
 <% @posts.each do |post| %>
   <div class="card">
-    <%= image_tag 'crossfit-534615_1920.jpg', class: "feed-img" %>
+    <%= image_tag post.image.url(:medium) %>
     <div class="card-body">
-      <h4 class="card-title"><%= (@posts.first.date - post.date + 1).to_i %>日目</h4>
       <p class="card-text">
       <table style="border-collapse: collapse; width: 100%;">
         <tbody>
+        <tr>
+          <td style="width: 20%;"> User :</td>
+          <td style="width: 20%;"><%= post.user.name %></td>
+        </tr>
+        <tr>
+          <td style="width: 20%;"> 日数　:</td>
+          <td style="width: 20%;"><%= (post.date - @posts.last.date + 1).to_i %>日目</td>
+        </tr>
         <tr>
           <td style="width: 20%;">日　　時:</td>
           <td style="width: 20%;"><%= post.date %></td>
