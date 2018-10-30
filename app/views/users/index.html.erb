@@ -1,4 +1,24 @@
-<h1>ユーザー一覧</h1>
 <% @users.each do |user| %>
-  <%= user.name %>
+  <div class="card">
+    <div class="card-body">
+      <table style="border-collapse: collapse; width: 100%;">
+        <tbody>
+        <tr>
+          <td style="width: 20%;"> User:</td>
+          <td style="width: 20%;"><%= link_to user.name, user %></td>
+        </tr>
+<!--        <tr>-->
+<!--          <td style="width: 20%;">日数:</td>-->
+<!--          <td style="width: 20%;"><%#= ((Date.today) + (user.started_at).to_i) %>日</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+          <td style="width: 20%;">目標まで:</td>
+          <td style="width: 20%;"><%= ((@posts.any? ? user.posts.first.weight : user.weight).to_f - (user.aim).to_f).round(2) %>kg</td>
+        </tr>
+        </tbody>
+      </table>
+      <%= link_to "詳細をみる", user %>
+      <div class="timestamp"><%= time_ago_in_words(user.created_at) %> ago.</div>
+    </div>
+  </div>
 <% end %>

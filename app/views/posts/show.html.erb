@@ -33,6 +33,6 @@
     </table>
     <div class="timestamp"><%= time_ago_in_words(@post.created_at) %> ago.</div>
   </div>
-  <%= link_to "Edit Post", edit_post_path, class:"btn btn-info" %>
-  <%= link_to "Return Home", root_path, class:"btn btn-success" %>
+  <% link_to "Edit Post", edit_post_path, class: "btn btn-info" %>
+  <%= link_to "Return Home", root_path, class: "btn btn-success" %>
 </div>
