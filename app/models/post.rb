@@ -1,10 +1,9 @@
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :picture, dependent: :destroy
   has_attached_file :image,
-                    styles:      { large: "600x600", medium: "300x300", thumb: "100x100" },
-                    default_url: "/images/:style/missing.png",
-                    path:        "#{Rails.root}/app/assets/images/:filename"
+                    styles:      { large: "600x600", medium: "300x250!", thumb: "100x100" },
+                    default_url: "/images/crossfit-534615_1920.jpg"
+
   validates_attachment_content_type :image, content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
 

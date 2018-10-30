@@ -1,6 +1,6 @@
 <div class="post-form">
   <h2>本日:<%= @by_last %>/100日目</h2>
-  <%= form_for(@post) do |f| %>
+  <%= form_for @post do |f| %>
     <div class="form-row">
       <div class="form-group col-md-3 base_info">
         <%= f.label :本日の体重 %><br/>
