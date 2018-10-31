@@ -1,30 +1,31 @@
-<%= render 'shared/flash' %>
 <h1>Edit Post</h1>
-<div class="post-form">
-  <h2>本日:<%= @by_last %>/100日目</h2>
-  <%= form_for(@post) do |f| %>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <%= f.label :本日の体重 %><br/>
-        <%= f.text_field :weight, class:"weight-field" %>kg
+<div class="card-show">
+  <%= image_tag @post.image.url(:large) %>
+  <div class="post-form">
+    <%= form_for(@post) do |f| %>
+      <div class="form-row">
+        <div class="form-group col-md-4 base_info">
+          <%= f.label :本日の体重 %><br/>
+          <%= f.text_field :weight, class: "weight-field" %>kg
+        </div>
+        <div class="form-group col-md-4 base_info">
+          <%= f.label :Photo %>
+          <%= f.file_field :image %>
+        </div>
       </div>
-      <!--      <div class="form-group col-md-6">-->
-      <!--        <%#= f.label :本日のBMI指数 %><br/>-->
-      <!--        <%#= f.number_field :bmi %>%-->
-      <!--      </div>-->
-    </div>
-    <div class="form-group">
-      <%= f.label :トレーニング内容 %>
-      <%= f.text_area :training, placeholder:"トレーニング内容", class:"content-field" %>
-    </div>
-    <div class="form-group">
-      <%= f.label :メモ %><br />
-      <%= f.text_area :content, placeholder: "Compose new Post", class: "content-field" %>
-    </div>
-    <div class="form-group">
-      <%= f.date_select :date %>
-    </div>
-    <%= f.submit "Post", class: "btn btn-success" %>
-  <% end %>
-  <%= link_to "return Post page", post_path %>
+      <div class="form-group">
+        <%= f.label :トレーニング内容 %>
+        <%= f.text_area :training, placeholder: "トレーニング内容", class: "content-field" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :メモ %><br/>
+        <%= f.text_area :content, placeholder: "Compose new Post", class: "content-field" %>
+      </div>
+      <div class="form-group">
+        <%= f.date_select :date %>
+      </div>
+      <%= f.submit "Post", class: "btn btn-success" %>
+    <% end %>
+    <%= link_to "return Post page", post_path %>
+  </div>
 </div>

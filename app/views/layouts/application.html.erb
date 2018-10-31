@@ -13,8 +13,9 @@
 <body class="<%= 'landding-page' unless user_signed_in? %>">
 <%= render 'layouts/header' %>
 <div class="container">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
   <%= yield %>
 </div>
 <%#= render 'layouts/footer' %>

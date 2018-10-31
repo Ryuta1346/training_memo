@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :user_signed_in?, only:[:create, :destroy, :edit]
+  before_action :correct_user, only:[:destroy, :edit]
 
   def index
     @posts = Post.all
@@ -41,4 +43,9 @@ class PostsController < ApplicationController
     def post_parameter
       params.require(:post).permit(:content, :weight, :height, :date, :aim, :bmi, :training, :image)
     end
+
+  def correct_user
+    @post = current_user.posts.find_by(id: params[:id])
+    redirect_to root_url if @post.nil?
+  end
 end
