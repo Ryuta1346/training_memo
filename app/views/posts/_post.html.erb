@@ -1,7 +1,7 @@
 <div class="card-feed">
   <% @posts.each do |post| %>
     <div class="card">
-      <%= image_tag post.image.url(:medium) %>
+      <%= image_tag post.image? ? post.image.url(:thumb) : ("crossfit-534615_1920.jpg") %>
       <div class="card-body">
         <h4 class="card-title"><%= (post.date - @posts.last.date + 1).to_i %>日目</h4>
         <p class="card-text">

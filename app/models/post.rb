@@ -1,18 +1,23 @@
 class Post < ApplicationRecord
   belongs_to :user
-  has_attached_file :image,
-                    styles:      { large: "600x500", medium: "250x350!", thumb: "100x100" },
-                    default_url: "/images/crossfit-534615_1920.jpg"
-
-  validates_attachment_content_type :image, content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
-
   default_scope -> { order(date: :desc) }
   validates :user_id, presence: true
   validates :training, presence: true
   validates :weight, presence: true
+  mount_uploader :image, ImageUploader
+  validate :image_size
+    #->validateメソッドは引数にシンボルを取り、そのシンボル名に対応したメソッドを呼び出す
+    #   =自分オリジナルのvalidationを使える
+
   # validate :one_post_per_day
 
   private
+
+  def image_size
+    if image.size > 5.megabytes
+      errors.add(:image, "should be less than 5MB")
+    end
+  end
 
   # def one_post_per_day
   #   if date.present? && user_id.present?
