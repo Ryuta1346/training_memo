@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts, dependent: :destroy
+  validates :name, :started_at, :aim, :weight, :height, presence: true
+
 end

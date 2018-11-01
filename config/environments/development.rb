@@ -17,9 +17,9 @@ Rails.application.configure do
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
     config.action_controller.perform_caching = true
 
-    config.cache_store = :memory_store
+    config.cache_store                = :memory_store
     config.public_file_server.headers = {
-      'Cache-Control' => "public, max-age=#{2.days.to_i}"
+        'Cache-Control' => "public, max-age=#{2.days.to_i}"
     }
   else
     config.action_controller.perform_caching = false
@@ -28,7 +28,7 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
-  config.active_storage.service = :amazon
+  config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -62,4 +62,18 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   Paperclip.options[:command_path] = "/usr/local/bin/"
+
+  # config.paperclip_defaults = {
+  #     storage: :s3,
+  #     s3_credentials: {
+  #         access_key_id:     ENV['AWS_ACCESS_KEY_ID'],
+  #         secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+  #         s3_region:         "ap-northeast-1",
+  #         bucket:            "daily-training-2018",
+  #     },
+  #     s3_host_alias: "daily-training-2018",
+  #     path:          "/:class/:attachment/:id_partition/:style/:filename",
+  #     url:           ":s3_alias_url",
+  #     s3_protocol:   "https"
+  # }
 end
