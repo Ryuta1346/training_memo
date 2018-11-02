@@ -28,7 +28,7 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
-  config.active_storage.service = :local
+  config.active_storage.service = :amazon
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -63,17 +63,17 @@ Rails.application.configure do
 
   # Paperclip.options[:command_path] = "/usr/local/bin/"
 
-  # config.paperclip_defaults = {
-  #     storage: :s3,
-  #     s3_credentials: {
-  #         access_key_id:     ENV['AWS_ACCESS_KEY_ID'],
-  #         secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
-  #         s3_region:         "ap-northeast-1",
-  #         bucket:            "daily-training-2018",
-  #     },
-  #     s3_host_alias: "daily-training-2018",
-  #     path:          "/:class/:attachment/:id_partition/:style/:filename",
-  #     url:           ":s3_alias_url",
-  #     s3_protocol:   "https"
-  # }
+  config.paperclip_defaults = {
+      storage:        :s3,
+      s3_credentials: {
+          :region => ENV['S3_REGION'], # 例: 'ap-northeast-1'
+          :aws_access_key_id     => ENV['S3_ACCESS_KEY'],
+          :aws_secret_access_key => ENV['S3_SECRET_KEY'],
+          :bucket                => ENV['S3_BUCKET'],
+      },
+      s3_host_alias:  "daily-training-2018",
+      path:           "/:class/:attachment/:id_partition/:style/:filename",
+      url:            ":s3_alias_url",
+      s3_protocol:    "https"
+  }
 end
