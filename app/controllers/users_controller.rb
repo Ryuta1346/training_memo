@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
+  before_action :user_signed_in?, only: [:index, :update, :edit, :destroy]
+  before_action :correct_user, only: [:update, :edit]
+
   def index
-    @users          = User.all
-    @posts          = Post.all
+    @users = User.all
+    @posts = Post.all
   end
 
   def show
@@ -13,4 +16,6 @@ class UsersController < ApplicationController
     @by_achievement = ((@posts.any? ? @recent_weight : @user.weight).to_f - (@user.aim).to_f).round(2)
     @by_last        = ((Date.today) - @user.started_at + 1).to_i
   end
+
+  private
 end

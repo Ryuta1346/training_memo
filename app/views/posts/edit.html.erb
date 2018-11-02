@@ -1,6 +1,6 @@
 <h1>Edit Post</h1>
 <div class="card-show">
-  <%= image_tag @post.image.url(:large) %>
+  <%= image_tag @post.image? ? @post.image.url(:medium) : ("crossfit-534615_1920.jpg"), width: "100%" %>
   <div class="post-form">
     <%= form_for(@post) do |f| %>
       <div class="form-row">
