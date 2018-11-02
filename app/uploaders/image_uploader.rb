@@ -6,6 +6,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   version :thumb do
     process resize_to_fill: [400, 300]
   end
+  version :medium do
+    process resize_to_fit: [600, 600]
+  end
 
 
   if Rails.env.production?
