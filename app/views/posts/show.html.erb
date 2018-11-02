@@ -1,37 +1,35 @@
 <div class="card-show">
-  <div class="card-body">
-    <%= image_tag @post.image? ? @post.image.url(:medium) : ("crossfit-534615_1920.jpg"), width: "100%" %>
-    <h4 class="card-title"><%= (@post.date - @posts.last.date + 1).to_i %>日目</h4>
-    <table class="card-text" style="border-collapse: collapse;">
-      <tbody class="card-text">
-      <tr class="card-in-table">
-        <td style="width: 20%;"><strong>日　　時:</strong></td>
-        <td style="width: 20%;"><%= @post.date %></td>
-      </tr>
-      <tr class="card-in-table">
-        <td style="width: 20%;"><strong>体　　重:</strong></td>
-        <td style="width: 20%;"><%= @post.weight %>kg</td>
-      </tr>
-      <tr class="card-in-table">
-        <td style="width: 20%;"><strong>B　M　I:</strong></td>
-        <td style="width: 20%;"><%= (@post.weight / current_user.height / current_user.height).round(2) %>%</td>
-      </tr>
-      <tr>
-        <td class="content-in-card" style="text-align: center;" colspan="2"><strong>トレーニング内容</strong></td>
-      </tr>
-      <tr>
-        <td class="card-in-table" style="text-align: center; height: 100px;" colspan="2"><%= simple_format(@post.training) %></td>
-      </tr>
-      <tr>
-        <td class="content-in-card" style="text-align: center;" colspan="2"><strong>メモ</strong></td>
-      </tr>
-      <tr>
-        <td class="card-in-table" style="text-align: center; height: 100px;" colspan="2"><%= simple_format(@post.content) %></td>
-      </tr>
-      </tbody>
-    </table>
-    <div class="timestamp"><%= time_ago_in_words(@post.created_at) %> ago.</div>
-  </div>
+  <%= image_tag @post.image? ? @post.image.url(:medium) : ("crossfit-534615_1920.jpg"), width: "100%" %>
+  <h4 class="card-title"><%= (@post.date - @posts.last.date + 1).to_i %>日目</h4>
+  <table class="card-text" style="border-collapse: collapse;">
+    <tbody class="card-text">
+    <tr class="card-in-table">
+      <td style="width: 20%;"><strong>日　　時:</strong></td>
+      <td style="width: 20%;"><%= @post.date %></td>
+    </tr>
+    <tr class="card-in-table">
+      <td style="width: 20%;"><strong>体　　重:</strong></td>
+      <td style="width: 20%;"><%= @post.weight %>kg</td>
+    </tr>
+    <tr class="card-in-table">
+      <td style="width: 20%;"><strong>B　M　I:</strong></td>
+      <td style="width: 20%;"><%= (@post.weight / current_user.height / current_user.height).round(2) %>%</td>
+    </tr>
+    <tr>
+      <td class="content-in-card" style="text-align: center;" colspan="2"><strong>トレーニング内容</strong></td>
+    </tr>
+    <tr>
+      <td class="card-in-table" style="text-align: center; height: 100px;" colspan="2"><%= simple_format(@post.training) %></td>
+    </tr>
+    <tr>
+      <td class="content-in-card" style="text-align: center;" colspan="2"><strong>メモ</strong></td>
+    </tr>
+    <tr>
+      <td class="card-in-table" style="text-align: center; height: 100px;" colspan="2"><%= simple_format(@post.content) %></td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="timestamp"><%= time_ago_in_words(@post.created_at) %> ago.</div>
   <% link_to "Edit Post", edit_post_path, class: "btn btn-info" %>
   <%= link_to "Return Home", root_path, class: "btn btn-success" %>
 </div>
