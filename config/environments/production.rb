@@ -92,17 +92,17 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.paperclip_defaults = {
-      storage:        :s3,
-      s3_credentials: {
-          :region => ENV['S3_REGION'], # 例: 'ap-northeast-1'
-          :aws_access_key_id     => ENV['S3_ACCESS_KEY'],
-          :aws_secret_access_key => ENV['S3_SECRET_KEY'],
-          :bucket                => ENV['S3_BUCKET'],
-      },
-      s3_host_alias:  "daily-training-2018",
-      path:           "/:class/:attachment/:id_partition/:style/:filename",
-      url:            ":s3_alias_url",
-      s3_protocol:    "https"
-  }
+  # config.paperclip_defaults = {
+  #     storage:        :s3,
+  #     s3_credentials: {
+  #         :region => ENV['S3_REGION'], # 例: 'ap-northeast-1'
+  #         :aws_access_key_id     => ENV['S3_ACCESS_KEY'],
+  #         :aws_secret_access_key => ENV['S3_SECRET_KEY'],
+  #         :bucket                => ENV['S3_BUCKET'],
+  #     },
+  #     s3_host_alias:  "daily-training-2018",
+  #     path:           "/:class/:attachment/:id_partition/:style/:filename",
+  #     url:            ":s3_alias_url",
+  #     s3_protocol:    "https"
+  # }
 end
