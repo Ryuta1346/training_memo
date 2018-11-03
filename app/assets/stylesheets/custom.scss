@@ -36,9 +36,9 @@ li {
 
 //Top Page//
 .landding-page {
-  background-image: image_url("crossfit-534615_1920.jpg");
+  background-image: image_url("crossfit-534615.jpg");
   background-size: cover;
-  width: 100%;
+  background-repeat: no-repeat;
 }
 
 .top-page {
@@ -48,6 +48,7 @@ li {
   padding: 15px;
   border: 2px solid #999999;
   border-radius: 5px;
+  margin: 50px;
   h1 {
     font-size: 30px;
   }
