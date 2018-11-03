@@ -1,3 +1,4 @@
+<% provide(:title, @post.user.name) %>
 <div class="card-show">
   <%= image_tag @post.image? ? @post.image.url(:medium) : ("crossfit-medium.jpg"), width: "100%" %>
   <h4 class="card-title"><%= (@post.date - @posts.last.date + 1).to_i %>日目</h4>
