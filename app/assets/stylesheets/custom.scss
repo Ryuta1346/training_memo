@@ -36,7 +36,7 @@ li {
 
 //Top Page//
 .landding-page {
-  background-image: image_url("crossfit-534615.jpg");
+  background-image: image_url("crossfit-toppage.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -208,7 +208,7 @@ footer {
 //スマホ////////////////////////////////////////////////////
 @media (max-width: 670px) {
   .landding-page {
-    background-image: image_url("crossfit-534615.jpg");
+    background-image: image_url("crossfit-toppage.jpg");
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -219,7 +219,7 @@ footer {
     width: 100%;
     padding: 15px;
     border: 2px solid #999999;
-    margin: 10px;
+    margin: 0 auto;
     h1 {
       font-size: 24px;
     }
