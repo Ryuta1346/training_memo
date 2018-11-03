@@ -135,7 +135,7 @@ footer {
   padding-top: 30px;
   text-align: center;
   margin: 0 auto;
-  .base_info{
+  .base_info {
     width: 100%;
     margin: 0 auto;
   }
@@ -197,9 +197,9 @@ footer {
   margin: 0 auto;
 }
 
-#error_explanation{
+#error_explanation {
   color: red;
-  ul{
+  ul {
     color: red;
     margin: 0 0 30px 0;
   }
@@ -211,22 +211,21 @@ footer {
     background-image: image_url("crossfit-toppage.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-  }
 
-  .top-page {
-    font-size: 12px;
-    background-color: #fff;
-    width: 80%;
-    padding: 15px;
-    border: 2px solid #999999;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    h1 {
-      font-size: 24px;
-    }
-    .sign-up {
-      width: 100%;
+    .top-page {
+      font-size: 12px;
+      background-color: #fff;
+      width: 80%;
+      padding: 15px;
+      border: 2px solid #999999;
       margin: 0 auto;
+      h1 {
+        font-size: 24px;
+      }
+      .sign-up {
+        width: 100%;
+        margin: 0 auto;
+      }
     }
   }
 
