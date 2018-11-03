@@ -1,5 +1,5 @@
 <% @users.each do |user| %>
-  <div class="card">
+  <div class="card-users">
     <div class="card-body">
       <table style="border-collapse: collapse; width: 100%;">
         <tbody>
@@ -7,13 +7,13 @@
           <td style="width: 20%;"> User:</td>
           <td style="width: 20%;"><%= link_to user.name, user %></td>
         </tr>
-<!--        <tr>-->
-<!--          <td style="width: 20%;">日数:</td>-->
-<!--          <td style="width: 20%;"><%#= ((Date.today) + (user.started_at).to_i) %>日</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
+        <tr>
+          <td style="width: 20%;">残日数:</td>
+          <td style="width: 20%;"><%= (100 - (user.posts.ids.count)) %>日</td>
+        </tr>
+        <tr>
           <td style="width: 20%;">目標まで:</td>
-          <td style="width: 20%;"><%= ((@posts.any? ? user.posts.first.weight : user.weight).to_f - (user.aim).to_f).round(2) %>kg</td>
+          <td style="width: 20%;"><%= ((user.posts.any? ? user.posts.first.weight : user.weight).to_f - (user.aim).to_f).round(2) %>kg</td>
         </tr>
         </tbody>
       </table>

@@ -1,35 +1,39 @@
-<% @posts.each do |post| %>
-  <div class="card">
-    <%= image_tag post.image? ? post.image.url(:thumb) : ("crossfit-534615_1920.jpg") %>
-    <div class="card-body">
-      <p class="card-text">
-      <table style="border-collapse: collapse; width: 100%;">
-        <tbody>
-        <tr>
-          <td style="width: 20%;"> User:</td>
-          <td style="width: 20%;"><%= link_to post.user.name, post.user %></td>
-        </tr>
-        <tr>
-          <td style="width: 20%;"> 日数:</td>
-          <td style="width: 20%;"><%= (post.date - @posts.last.date + 1).to_i %>日目</td>
-        </tr>
-        <tr>
-          <td style="width: 20%;">日時:</td>
-          <td style="width: 20%;"><%= post.date %></td>
-        </tr>
-        <tr>
-          <td style="width: 20%;">体重:</td>
-          <td style="width: 20%;"><%= post.weight %>kg</td>
-        </tr>
-        <tr>
-          <td style="width: 20%;">BMI:</td>
-          <td style="width: 20%;"><%= (post.weight/current_user.height/current_user.height).round(2) %>%</td>
-        </tr>
-        </tbody>
-      </table>
-      <%= link_to "詳細をみる", post %>
-      <div class="timestamp"><%= time_ago_in_words(post.created_at) %> ago.</div>
-      </p>
-    </div>
+<div class="container">
+  <div class="row">
+    <% @posts.each do |post| %>
+      <div class="card-posts">
+        <%= image_tag post.image? ? post.image.url(:thumb) : ("crossfit-thumb.jpg") %>
+        <div class="card-body">
+          <p class="card-text">
+          <table style="border-collapse: collapse; width: 100%;">
+            <tbody>
+            <tr>
+              <td style="width: 20%;"> User:</td>
+              <td style="width: 20%;"><%= link_to post.user.name, post.user %></td>
+            </tr>
+            <tr>
+              <td style="width: 20%;"> 日数:</td>
+              <td style="width: 20%;"><%= (post.date - @posts.last.date + 1).to_i %>日目</td>
+            </tr>
+            <tr>
+              <td style="width: 20%;">日時:</td>
+              <td style="width: 20%;"><%= post.date %></td>
+            </tr>
+            <tr>
+              <td style="width: 20%;">体重:</td>
+              <td style="width: 20%;"><%= post.weight %>kg</td>
+            </tr>
+            <tr>
+              <td style="width: 20%;">BMI:</td>
+              <td style="width: 20%;"><%= (post.weight / current_user.height / current_user.height).round(2) %>%</td>
+            </tr>
+            </tbody>
+          </table>
+          <%= link_to "詳細をみる", post %>
+          <div class="timestamp"><%= time_ago_in_words(post.created_at) %> ago.</div>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
+<%= paginate @posts, class: "pagination" %>

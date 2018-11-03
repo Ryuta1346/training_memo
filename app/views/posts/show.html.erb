@@ -1,5 +1,5 @@
 <div class="card-show">
-  <%= image_tag @post.image? ? @post.image.url(:medium) : ("crossfit-534615_1920.jpg"), width: "100%" %>
+  <%= image_tag @post.image? ? @post.image.url(:medium) : ("crossfit-medium.jpg"), width: "100%" %>
   <h4 class="card-title"><%= (@post.date - @posts.last.date + 1).to_i %>日目</h4>
   <table class="card-text" style="border-collapse: collapse;">
     <tbody class="card-text">
@@ -30,8 +30,8 @@
     </tbody>
   </table>
   <div class="timestamp"><%= time_ago_in_words(@post.created_at) %> ago.</div>
-  <%# if current_user.admin? %>
-    <%= link_to "Edit", [:edit, @post] %>
-  <%# end %>
+  <% if current_user?(@post.user) %>
+    <%= link_to "Edit", edit_post_path, class: "btn btn-info" %>
+  <% end %>
   <%= link_to "Return Home", root_path, class: "btn btn-success" %>
 </div>

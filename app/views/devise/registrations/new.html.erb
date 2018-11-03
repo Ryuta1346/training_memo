@@ -27,6 +27,12 @@
     </div>
 
     <div class="form-group col-md-8">
+      <%= f.label :トレーニング終了予定日 %><br/>
+      <%= f.date_select :finished_at, default: Date.today + 100 %>
+      <p>*今日から100日後:<%= Date.today + 100 %></p>
+    </div>
+
+    <div class="form-group col-md-8">
       <%= f.text_field :weight, autofocus: true, placeholder: "開始時の体重" %>kg
     </div>
     <div class="form-group col-md-8">
