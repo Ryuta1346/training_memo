@@ -58,6 +58,21 @@ li {
   }
 }
 
+.top-page-login {
+  background-color: #fff;
+  width: 30%;
+  text-align: center;
+  float: right;
+  padding: 15px;
+  border: 2px solid #999999;
+  border-radius: 5px;
+  margin-top: 100px;
+  margin-right: 200px;
+  h1 {
+    font-size: 30px;
+  }
+}
+
 //User Info//
 .user-info {
 }
@@ -216,6 +231,23 @@ footer {
       font-size: 12px;
       background-color: #fff;
       width: 80%;
+      padding: 15px;
+      border: 2px solid #999999;
+      margin: 30px 5px 200px 10px;
+      h1 {
+        font-size: 24px;
+      }
+      .sign-up {
+        width: 100%;
+        margin: 0 auto;
+      }
+    }
+
+    .top-page-login {
+      font-size: 12px;
+      background-color: #fff;
+      width: 50%;
+      text-align: center;
       padding: 15px;
       border: 2px solid #999999;
       margin: 30px 5px 200px 10px;
