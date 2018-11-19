@@ -1,56 +1,41 @@
 <% provide(:title, @user.name) %>
-<div class="user-info">
-  <div class="profile">
-    <div class="profile-top">
-      <%= @user.name %><br/>
-      <p class="aim">【目標:<%= @user.aim %>kg】</p>
-      <p class="aim">【達成まで:<%= @by_achievement %>kg】</p>
-    </div>
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h3 class="display-4 font-weight-normal"><%= @user.name %></h3>
+    <h4>目標:<%= @user.aim %>kg</h4>
+    <h4>達成まで:<%= @by_achievement %>kg</h4>
+    <p class="lead font-weight-normal">
     <div class="start-info">
-      <table style="border-collapse: collapse; width: 100%;">
-        <tbody>
+      <table>
+        <tbody style="border: 1px solid #000000">
         <tr>
-          <td style="width: 50%; text-align: center;" colspan="2">開始時</td>
+          <td style="width: 200px"></td>
+          <td style="width: 400px">開始時</td>
+          <td style="width: 400px">現　在</td>
         </tr>
         <tr>
-          <td style="width: 20%;">日　　時:</td>
-          <td style="width: 20%;"><%= @user.started_at %></td>
+          <td style="width: 200px">日時</td>
+          <td style="width: 400px"><%= @user.started_at %></td>
+          <td style="width: 400px"><%= 100 - @posts.count %>日</td>
         </tr>
         <tr>
-          <td style="width: 20%;">体　　重:</td>
-          <td style="width: 20%;"><%= @user.weight %>kg</td>
+          <td style="width: 200px">体重</td>
+          <td style="width: 400px"><%= @user.weight %>kg</td>
+          <td style="width: 400px"><%= @recent_weight %>kg</td>
         </tr>
         <tr>
-          <td style="width: 20%;">B　M　I:</td>
-          <td style="width: 20%;"><%= @first_bmi %>%
-          </td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="current_info">
-      <table style="border-collapse: collapse; width: 100%;">
-        <tbody>
-        <tr>
-          <td style="width: 50%; text-align: center;" colspan="2">現在</td>
-        </tr>
-        <tr>
-          <td style="width: 20%;">残 日 数:</td>
-          <td style="width: 20%;"><%= 100 - @posts.count %>日</td>
-        </tr>
-        <tr>
-          <td style="width: 20%;">体　重:</td>
-          <td style="width: 20%;"><%= @recent_weight %>kg</td>
-        </tr>
-        <tr>
-          <td style="width: 20%;">B　M　I:</td>
-          <td style="width: 20%;"><%= @recent_bmi %>
-            %
-          </td>
+          <td style="width: 200px">B M I</td>
+          <td style="width: 400px"><%= @first_bmi %>%</td>
+          <td style="width: 400px"><%= @recent_bmi %></td>
         </tr>
         </tbody>
       </table>
     </div>
+    </p>
   </div>
+  <div class="product-device shadow-sm d-none d-md-block"></div>
+  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+  <%#= render 'shared/post_form' %>
 </div>
+
 <%= render 'posts/post' %>

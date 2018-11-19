@@ -1,44 +1,46 @@
 <% provide(:title, "Edit Post") %>
-<h1>Edit Post</h1>
-<div class="card-show">
-  <%= image_tag @post.image? ? @post.image.url(:medium) : ("crossfit-534615.jpg"), width: "100%" %>
-  <div class="post-form">
-    <%= form_for(@post) do |f| %>
-      <div class="form-row">
-        <div class="form-group col-md-4 base_info">
-          <%= f.label :本日の体重 %><br/>
-          <%= f.number_field :weight, step: 0.01, value: @post.weight, class: "weight-field" %>kg
+<div class="container">
+  <h1>Edit Post</h1>
+  <div class="card-show">
+    <%= image_tag @post.image? ? @post.image.url(:medium) : ("crossfit-534615.jpg"), width: "100%" %>
+    <div class="post-form">
+      <%= form_for(@post) do |f| %>
+        <div class="form-row">
+          <div class="form-group col-md-4 base_info">
+            <%= f.label :本日の体重 %><br/>
+            <%= f.number_field :weight, step: 0.01, value: @post.weight, class: "weight-field" %>kg
+          </div>
+          <div class="form-group col-md-4 base_info">
+            <%= f.label :Photo %>
+            <%= f.file_field :image %>
+          </div>
         </div>
-        <div class="form-group col-md-4 base_info">
-          <%= f.label :Photo %>
-          <%= f.file_field :image %>
+        <div class="form-group">
+          <%= f.label :トレーニング内容 %>
+          <%= f.text_area :training, placeholder: "トレーニング内容", class: "content-field" %>
         </div>
-      </div>
-      <div class="form-group">
-        <%= f.label :トレーニング内容 %>
-        <%= f.text_area :training, placeholder: "トレーニング内容", class: "content-field" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :【朝食】 %><br/>
-        <%= f.text_area :morning, placeholder: "朝食は何を食べましたか？", class: "content-field" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :【昼食】 %><br/>
-        <%= f.text_area :lunch, placeholder: "昼食は何を食べましたか？", class: "content-field" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :【夕食】 %><br/>
-        <%= f.text_area :dinner, placeholder: "夕食は何を食べましたか？", class: "content-field" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :メモ %><br/>
-        <%= f.text_area :content, placeholder: "Compose new Post", class: "content-field" %>
-      </div>
-      <div class="form-group">
-        <%= f.date_select :date %>
-      </div>
-      <%= f.submit "Post", class: "btn btn-success" %>
-    <% end %>
-    <%= link_to "return Post page", post_path %>
+        <div class="form-group">
+          <%= f.label :【朝食】 %><br/>
+          <%= f.text_area :morning, placeholder: "朝食は何を食べましたか？", class: "content-field" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :【昼食】 %><br/>
+          <%= f.text_area :lunch, placeholder: "昼食は何を食べましたか？", class: "content-field" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :【夕食】 %><br/>
+          <%= f.text_area :dinner, placeholder: "夕食は何を食べましたか？", class: "content-field" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :メモ %><br/>
+          <%= f.text_area :content, placeholder: "Compose new Post", class: "content-field" %>
+        </div>
+        <div class="form-group">
+          <%= f.date_select :date %>
+        </div>
+        <%= f.submit "Post", class: "btn btn-success" %>
+      <% end %>
+      <%= link_to "return Post page", post_path %>
+    </div>
   </div>
 </div>

@@ -1,48 +1,50 @@
 <% provide(:title, @post.user.name) %>
-<div class="card-show">
-  <%= image_tag @post.image? ? @post.image.url(:medium) : ("crossfit-medium.jpg"), width: "100%" %>
-  <h4 class="card-title"><%= (@post.date - @posts.last.date + 1).to_i %>日目</h4>
-  <table class="card-text" style="border-collapse: collapse;">
-    <tbody>
-    <tr>
-      <td class="content-in-card"><strong>日　　時</strong></td>
-      <td class="card-in-table"><%= @post.date %></td>
-    </tr>
-    <tr>
-      <td class="content-in-card"><strong>体　　重</strong></td>
-      <td class="card-in-table"><%= @post.weight %>kg</td>
-    </tr>
-    <tr>
-      <td class="content-in-card"><strong>B　M　I</strong></td>
-      <td class="card-in-table"><%= (@post.weight / current_user.height / current_user.height).round(2) %>%</td>
-    </tr>
-    <tr>
-      <td class="content-in-card";><strong>トレーニング内容</strong></td>
-      <td class="card-in-table"><%= simple_format(@post.training) %></td>
-    </tr>
-    <tr>
-      <td class="content-in-card";><strong>朝食</strong></td>
-      <td class="card-in-table";><%= simple_format(@post.morning) %></td>
-    </tr>
-    <tr>
-      <td class="content-in-card";><strong>昼食</strong></td>
-      <td class="card-in-table";><%= simple_format(@post.lunch) %></td>
-    </tr>
-    <tr>
-      <td class="content-in-card";><strong>夕食</strong></td>
-      <td class="card-in-table";><%= simple_format(@post.dinner) %></td>
-    </tr>
-    <tr>
-      <td class="content-in-card" style="text-align: center;" colspan="2"><strong>メモ</strong></td>
-    </tr>
-    <tr>
-      <td class="card-in-table" style="text-align: center; height: 100px;" colspan="2"><%= simple_format(@post.content) %></td>
-    </tr>
-    </tbody>
-  </table>
-  <div class="timestamp"><%= time_ago_in_words(@post.created_at) %> ago.</div>
-  <% if current_user?(@post.user) %>
-    <%= link_to "Edit", edit_post_path, class: "btn btn-info" %>
-  <% end %>
-  <%= link_to "Return Home", root_path, class: "btn btn-success" %>
+<div class="container">
+  <div class="card-show">
+    <%= image_tag @post.image? ? @post.image.url(:medium) : ("crossfit-medium.jpg"), width: "100%" %>
+    <h4 class="card-title"><%= (@post.date - @posts.last.date + 1).to_i %>日目</h4>
+    <table class="card-text" style="border-collapse: collapse;">
+      <tbody>
+      <tr>
+        <td class="content-in-card"><strong>日　　時</strong></td>
+        <td class="card-in-table"><%= @post.date %></td>
+      </tr>
+      <tr>
+        <td class="content-in-card"><strong>体　　重</strong></td>
+        <td class="card-in-table"><%= @post.weight %>kg</td>
+      </tr>
+      <tr>
+        <td class="content-in-card"><strong>B　M　I</strong></td>
+        <td class="card-in-table"><%= (@post.weight / current_user.height / current_user.height).round(2) %>%</td>
+      </tr>
+      <tr>
+        <td class="content-in-card" ;><strong>トレーニング内容</strong></td>
+        <td class="card-in-table"><%= simple_format(@post.training) %></td>
+      </tr>
+      <tr>
+        <td class="content-in-card" ;><strong>朝食</strong></td>
+        <td class="card-in-table" ;><%= simple_format(@post.morning) %></td>
+      </tr>
+      <tr>
+        <td class="content-in-card" ;><strong>昼食</strong></td>
+        <td class="card-in-table" ;><%= simple_format(@post.lunch) %></td>
+      </tr>
+      <tr>
+        <td class="content-in-card" ;><strong>夕食</strong></td>
+        <td class="card-in-table" ;><%= simple_format(@post.dinner) %></td>
+      </tr>
+      <tr>
+        <td class="content-in-card" style="text-align: center;" colspan="2"><strong>メモ</strong></td>
+      </tr>
+      <tr>
+        <td class="card-in-table" style="text-align: center; height: 100px;" colspan="2"><%= simple_format(@post.content) %></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="timestamp"><%= time_ago_in_words(@post.created_at) %> ago.</div>
+    <% if current_user?(@post.user) %>
+      <%= link_to "Edit", edit_post_path, class: "btn btn-info" %>
+    <% end %>
+    <%= link_to "Return Home", root_path, class: "btn btn-success" %>
+  </div>
 </div>
