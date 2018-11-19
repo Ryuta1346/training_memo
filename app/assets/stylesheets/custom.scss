@@ -1,14 +1,3 @@
-@import "bootstrap";
-
-body {
-  height: 100%;
-  padding-bottom: 50px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 //li {
 //  list-style: none;
 //}
@@ -109,12 +98,8 @@ body {
   }
 
   .start-info {
-    font-size: 14px;
-    font-weight: bold;
-    width: 50%;
-    float: left;
-    border-right: 1px solid #1dc1d6;
-    padding: 5px;
+    border: 1px solid #000000;
+    border-radius: 10px;
   }
 
   .current_info {
@@ -132,24 +117,24 @@ body {
 }
 
 //footer//
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #999999;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  background-color: #DADADA;
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 15px;
-    }
-  }
-}
+//footer {
+//  margin-top: 45px;
+//  padding-top: 5px;
+//  border-top: 1px solid #999999;
+//  position: absolute;
+//  bottom: 0;
+//  width: 100%;
+//  height: 50px;
+//  background-color: #DADADA;
+//  ul {
+//    float: right;
+//    list-style: none;
+//    li {
+//      float: left;
+//      margin-left: 15px;
+//    }
+//  }
+//}
 
 //Edit User//
 .edit-user {
@@ -360,4 +345,11 @@ footer {
     width: 100%;
     margin: 0 auto;
   }
+}
+
+
+/////////////////////////////
+
+.post-line{
+  width: 50%;
 }

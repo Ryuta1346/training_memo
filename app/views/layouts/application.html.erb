@@ -5,7 +5,11 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92629648-9"></script>
   <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+
+      function gtag() {
+          dataLayer.push(arguments);
+      }
+
       gtag('js', new Date());
 
       gtag('config', 'UA-92629648-9');
@@ -23,12 +27,10 @@
 
 <body class="<%= 'landding-page' unless user_signed_in? %>">
 <%= render 'layouts/header' %>
-<div class="container">
-  <% flash.each do |message_type, message| %>
-    <div class="alert alert-<%= message_type %>"><%= message %></div>
-  <% end %>
-  <%= yield %>
-</div>
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
+<%= yield %>
 <%#= render 'layouts/footer' %>
 </body>
 </html>
