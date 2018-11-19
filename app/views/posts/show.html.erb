@@ -3,24 +3,34 @@
   <%= image_tag @post.image? ? @post.image.url(:medium) : ("crossfit-medium.jpg"), width: "100%" %>
   <h4 class="card-title"><%= (@post.date - @posts.last.date + 1).to_i %>日目</h4>
   <table class="card-text" style="border-collapse: collapse;">
-    <tbody class="card-text">
-    <tr class="card-in-table">
-      <td style="width: 20%;"><strong>日　　時:</strong></td>
-      <td style="width: 20%;"><%= @post.date %></td>
-    </tr>
-    <tr class="card-in-table">
-      <td style="width: 20%;"><strong>体　　重:</strong></td>
-      <td style="width: 20%;"><%= @post.weight %>kg</td>
-    </tr>
-    <tr class="card-in-table">
-      <td style="width: 20%;"><strong>B　M　I:</strong></td>
-      <td style="width: 20%;"><%= (@post.weight / current_user.height / current_user.height).round(2) %>%</td>
+    <tbody>
+    <tr>
+      <td class="content-in-card"><strong>日　　時</strong></td>
+      <td class="card-in-table"><%= @post.date %></td>
     </tr>
     <tr>
-      <td class="content-in-card" style="text-align: center;" colspan="2"><strong>トレーニング内容</strong></td>
+      <td class="content-in-card"><strong>体　　重</strong></td>
+      <td class="card-in-table"><%= @post.weight %>kg</td>
     </tr>
     <tr>
-      <td class="card-in-table" style="text-align: center; height: 100px;" colspan="2"><%= simple_format(@post.training) %></td>
+      <td class="content-in-card"><strong>B　M　I</strong></td>
+      <td class="card-in-table"><%= (@post.weight / current_user.height / current_user.height).round(2) %>%</td>
+    </tr>
+    <tr>
+      <td class="content-in-card";><strong>トレーニング内容</strong></td>
+      <td class="card-in-table"><%= simple_format(@post.training) %></td>
+    </tr>
+    <tr>
+      <td class="content-in-card";><strong>朝食</strong></td>
+      <td class="card-in-table";><%= simple_format(@post.morning) %></td>
+    </tr>
+    <tr>
+      <td class="content-in-card";><strong>昼食</strong></td>
+      <td class="card-in-table";><%= simple_format(@post.lunch) %></td>
+    </tr>
+    <tr>
+      <td class="content-in-card";><strong>夕食</strong></td>
+      <td class="card-in-table";><%= simple_format(@post.dinner) %></td>
     </tr>
     <tr>
       <td class="content-in-card" style="text-align: center;" colspan="2"><strong>メモ</strong></td>

@@ -76,6 +76,16 @@ body {
   }
 }
 
+//*About Page*//
+.about-page{
+  width: 100%;
+  margin-top: 50px;
+  background-color: #ffffff;
+  border: 1px solid #666666;
+  padding: 30px;
+  border-radius: 10px;
+}
+
 //User Info//
 .user-info {
 }
@@ -172,21 +182,21 @@ footer {
 //Post//
 .card-show {
   width: 80%;
-  height: 100%;
-  height: auto !important;
-  padding-top: 20px;
   margin: 0 auto;
   text-align: center;
 
   .card-text {
     width: 100%;
     margin: 0 auto;
+    border: 1px solid #666666;
     .card-in-table {
-      border-bottom: #999999 3px solid;
+      border: 1px solid #666666;
+      width: 80%;
     }
     .content-in-card {
-      border-bottom: 1px solid #999999;
+      border: 1px solid #666666;
       background-color: #DADADA;
+      width: 20%;
     }
   }
 }

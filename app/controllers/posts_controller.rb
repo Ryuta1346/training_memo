@@ -41,7 +41,7 @@ class PostsController < ApplicationController
   private
 
     def post_parameter
-      params.require(:post).permit(:content, :weight, :height, :date, :aim, :bmi, :training, :image)
+      params.require(:post).permit(:content, :weight, :height, :date, :aim, :bmi, :training, :image, :morning, :lunch, :dinner)
     end
 
   def correct_user
