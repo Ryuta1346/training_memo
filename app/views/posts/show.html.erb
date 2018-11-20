@@ -44,6 +44,7 @@
     <div class="timestamp"><%= time_ago_in_words(@post.created_at) %> ago.</div>
     <% if current_user?(@post.user) %>
       <%= link_to "Edit", edit_post_path, class: "btn btn-info" %>
+      <%= link_to "Delete", post_path, method: :delete, class:"btn btn-danger" %>
     <% end %>
     <%= link_to "Return Home", root_path, class: "btn btn-success" %>
   </div>
