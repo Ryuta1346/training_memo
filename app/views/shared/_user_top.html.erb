@@ -14,7 +14,7 @@
         </tr>
         <tr>
           <td style="width: 200px">日時</td>
-          <td style="width: 400px"><%= current_user.started_at %></td>
+          <td style="width: 400px"><%= @user.started_at %></td>
           <td style="width: 400px"><%= 100 - @posts.ids.count %>日</td>
         </tr>
         <tr>
@@ -25,7 +25,7 @@
         <tr>
           <td style="width: 200px">B M I</td>
           <td style="width: 400px"><%= @first_bmi %>%</td>
-          <td style="width: 400px"><%= @recent_bmi %></td>
+          <td style="width: 400px"><%= @recent_bmi %>%</td>
         </tr>
         </tbody>
       </table>
