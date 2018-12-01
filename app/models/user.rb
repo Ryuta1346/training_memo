@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :name, :started_at, :aim, :weight, :height, presence: true
 
   def bmi(weight, height)
-    (weight / (height * 2)).round(2)
+    bmi = weight / (height * height)
+    bmi.round(2)
   end
 end

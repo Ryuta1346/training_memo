@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_action :user_signed_in?, only: [:index, :update, :edit, :destroy]
-  before_action :correct_user, only: [:update, :edit]
 
   def index
     @users = User.all
@@ -17,5 +16,4 @@ class UsersController < ApplicationController
     @by_last        = ((Date.today) - @user.started_at + 1).to_i
   end
 
-  private
 end
