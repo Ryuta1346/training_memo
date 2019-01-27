@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+このアプリはポテパンキャンプに参加しながら私が初めて作成したアプリです。
 
-Things you may want to cover:
+日々のトレーニングを記録することを目的としたアプリになっています。
 
-* Ruby version
+初めて作成したアプリということもあり、コード中に不要なコメントや悪いコードが多々ありますが、今後調整していく予定です。
 
-* System dependencies
+###今後の実装予定
 
-* Configuration
+・RSpecの導入
 
-* Database creation
+・投稿の画像化
 
-* Database initialization
+・食事の記録機能
 
-* How to run the test suite
+・鍛えたい部位の情報を取得し、その情報をもとにオススメのトレーニング内容を紹介している記事へのリンクを取得&設置
 
-* Services (job queues, cache servers, search engines, etc.)
+・投稿の検索機能
 
-* Deployment instructions
-
-* ...
+・各種SNSとの連携
