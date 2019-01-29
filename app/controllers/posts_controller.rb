@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :user_signed_in?, only:[:create, :destroy, :edit]
-  before_action :correct_user, only:[:destroy, :edit]
+  before_action :user_signed_in?, only: [:create, :destroy, :edit]
+  before_action :correct_user, only: [:destroy, :edit]
 
   def index
     @posts = Post.all.page(params[:page]).per(24)
@@ -45,9 +45,9 @@ class PostsController < ApplicationController
 
   private
 
-    def post_parameter
-      params.require(:post).permit(:content, :weight, :height, :date, :aim, :bmi, :training, :image, :morning, :lunch, :dinner)
-    end
+  def post_parameter
+    params.require(:post).permit(:content, :weight, :height, :date, :aim, :bmi, :training, :image, :morning, :lunch, :dinner)
+  end
 
   def correct_user
     @post = current_user.posts.find_by(id: params[:id])

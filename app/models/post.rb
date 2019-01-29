@@ -18,10 +18,4 @@ class Post < ApplicationRecord
         errors.add(:image, "should be less than 5MB")
       end
     end
-
-  # def one_post_per_day
-  #   if date.present? && user_id.present?
-  #     errors.add(:date, "Date is already posted!")
-  #   end
-  # end
 end

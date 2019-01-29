@@ -1,17 +1,45 @@
 inherit_from:
-- .rubocop_airbnb.yml
+  - .rubocop_airbnb.yml
 
 AllCops:
   TargetRubyVersion: 2.4.1
   Exclude:
-  - 'db/**/*'
-  - 'config/**/*'
-  - 'script/**/*'
-  - 'bin/**/*'
-  - 'vendor/**/*'
-  - 'Gemfile'
-  - 'lib/tasks/_force_reload.rake'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/**/*'
+    - 'vendor/**/*'
+    - 'Gemfile'
+    - 'lib/tasks/_force_reload.rake'
+
+Layout/EmptyLines:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Style/NumericLiteralPrefix:
+  Exclude:
+    - 'spec/factories/posts.rb'
+    - 'spec/factories/users.rb'
+
+Lint/ShadowingOuterLocalVariable:
+  Exclude:
+    - 'spec/rails_helper.rb'
+
+Airbnb/DefaultScope:
+  Enabled: false
+
+Layout/IndentationWidth:
+  Exclude:
+    - 'app/models/post.rb'
+
+Layout/IndentationConsistency:
+  Enabled: false
 
 Airbnb/OptArgParameters:
   Exclude:
-  - 'app/helpers/application_helper.rb'
+    - 'app/helpers/application_helper.rb'
