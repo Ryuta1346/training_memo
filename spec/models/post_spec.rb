@@ -10,7 +10,7 @@ RSpec.describe Post, type: :model do
     # end
 
     it "is valid with weight, date, training" do
-      expect(build(:post)).to be_valid
+      expect(create(:post)).to be_valid
     end
 
     it { is_expected.to validate_presence_of :weight }

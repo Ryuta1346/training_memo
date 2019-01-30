@@ -13,32 +13,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:name])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name])
-
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:started_at])
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:started_at])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:started_at])
-
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:finished_at])
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:finished_at])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:finished_at])
-
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:aim])
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:aim])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:aim])
-
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:weight])
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:weight])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:weight])
-
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:bmi])
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:bmi])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:bmi])
-
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:height])
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:height])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:height])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :started_at, :finished_at, :aim, :weight, :bmi, :height])
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:name, :started_at, :finished_at, :aim, :weight, :bmi, :height])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :started_at, :finished_at, :aim, :weight, :bmi, :height])
   end
 end

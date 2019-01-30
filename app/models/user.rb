@@ -6,9 +6,4 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   validates :name, :started_at, :aim, :weight, :height, presence: true
-
-  def bmi(weight, height)
-    bmi = weight / (height * height)
-    bmi.round(2)
-  end
 end

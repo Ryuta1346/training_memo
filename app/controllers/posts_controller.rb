@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :user_signed_in?, only: [:create, :destroy, :edit]
+  before_action :authenticate_user!, except: [:new]
   before_action :correct_user, only: [:destroy, :edit]
 
   def index
@@ -46,7 +46,7 @@ class PostsController < ApplicationController
   private
 
   def post_parameter
-    params.require(:post).permit(:content, :weight, :height, :date, :aim, :bmi, :training, :image, :morning, :lunch, :dinner)
+    params.require(:post).permit(:content, :weight, :height, :date, :aim, :training, :image, :morning, :lunch, :dinner)
   end
 
   def correct_user
