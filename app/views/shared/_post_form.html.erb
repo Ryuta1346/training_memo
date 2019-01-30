@@ -1,5 +1,5 @@
 <div class="post-form">
-  <h2>残日数:<%= @by_last %>/100日目</h2>
+  <h2><%= @by_last %>/100日目</h2>
   <%= form_for @post do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="form-row">

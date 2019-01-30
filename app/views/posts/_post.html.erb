@@ -3,7 +3,7 @@
     <div class="card">
       <%= image_tag post.image? ? post.image.url(:thumb) : ("crossfit-thumb.jpg") %>
       <div class="card-body">
-        <h4 class="card-title"><%= (post.date - @user.started_at).to_i %>日目</h4>
+        <h4 class="card-title"><%= (post.date - @user.started_at + 1).to_i %>日目</h4>
         <p class="card-text">
         <table style="border-collapse: collapse; width: 100%;">
           <tbody>
