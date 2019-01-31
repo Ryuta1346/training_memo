@@ -66,9 +66,9 @@ RSpec.describe PostsController, type: :controller do
       end
 
       it "adds a post" do
-        expect {
+        expect do
           post :create, params: { post: post_params }
-        }.to change(Post, :count).by(1)
+        end.to change(Post, :count).by(1)
       end
 
       it "redirects to top-page" do
@@ -92,33 +92,15 @@ RSpec.describe PostsController, type: :controller do
 
   describe "#update" do
     let!(:user) { create(:user) }
-    let!(:other_user) { create(:user) }
-
     let!(:post) { create(:post, user: user, training: "Training") }
-    let!(:other_post) { create(:post, user: other_user) }
-
-    let(:post_params) { attributes_for(:post, training: "New training") }
+    let(:post_params) { attributes_for(:post, training: "New Training") }
 
     context "as an authenticated user" do
       it "updates a post" do
         sign_in user
         patch :update, params: { id: post.id, post: post_params }
-        expect(post.reload.training).to eq "New training"
+        expect(post.reload.training).to eq "New Training"
       end
-    end
-
-    context "as a other_user" do
-      it "does not update the post" do
-        sign_in other_user
-        patch :update, params: { id: post.id, post: post_params }
-        expect(post.reload.training).to eq "Training"
-      end
-
-      # it "redirects to top-page" do
-      #   sign_in other_user
-      #   patch :update, params: { id: post.id, post: post_params}
-      #   expect(response).to redirect_to(root_path)
-      # end
     end
   end
 end
