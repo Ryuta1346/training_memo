@@ -1,5 +1,6 @@
 # README
 
+##Daily-Training-2019
 url: https://daily-training-2019.herokuapp.com/
 
 このアプリはポテパンキャンプに参加しながら私が初めて作成したアプリです。
@@ -10,14 +11,16 @@ url: https://daily-training-2019.herokuapp.com/
 
 ###今後の実装予定
 
-・RSpecの導入
-
-・投稿の画像化
+・RSpecの導入(controller spec, model specは実装済み)
 
 ・食事の記録機能
 
-・鍛えたい部位の情報を取得し、その情報をもとにオススメのトレーニング内容を紹介している記事へのリンクを取得&設置
+・クローラーを活用したトレーニング情報の収集&表示
 
-・投稿の検索機能
+・投稿/ユーザーの検索機能
 
 ・各種SNSとの連携
+
+・DM機能
+
+・トレーナー用アカウントの作成
