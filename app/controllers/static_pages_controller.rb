@@ -1,8 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
     if user_signed_in?
-      @user           = current_user
-      user            = @user
+      user            = current_user
       @post           = user.posts.build
       @posts          = user.posts.all
       @first_bmi      = (user.weight / user.height / user.height).round(2)

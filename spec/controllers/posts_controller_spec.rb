@@ -100,11 +100,8 @@ RSpec.describe PostsController, type: :controller do
     let(:post_params) { attributes_for(:post, training: "New training") }
 
     context "as an authenticated user" do
-      before do
-        sign_in user
-      end
-
       it "updates a post" do
+        sign_in user
         patch :update, params: { id: post.id, post: post_params }
         expect(post.reload.training).to eq "New training"
       end

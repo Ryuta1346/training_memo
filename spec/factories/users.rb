@@ -6,8 +6,8 @@ FactoryBot.define do
     sequence(:name) { |n| "Test User#{n}" }
     sequence(:email) { |n| "test#{n}@example.com" }
     password { "password" }
-    started_at { 2019 - 01 - 01 }
-    finished_at { 2019 - 03 - 31 }
+    started_at { Date.today }
+    finished_at { Date.today.next_month(3) }
     aim { 65.0 }
     weight { current_weight }
     height { 1.7 }
