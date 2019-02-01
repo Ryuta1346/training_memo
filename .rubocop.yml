@@ -40,6 +40,12 @@ Layout/IndentationWidth:
 Layout/IndentationConsistency:
   Enabled: false
 
+Layout/TrailingBlankLines:
+  Enabled: false
+
+Layout/SpaceAroundOperators:
+  Enabled: false
+
 Airbnb/OptArgParameters:
   Exclude:
     - 'app/helpers/application_helper.rb'
