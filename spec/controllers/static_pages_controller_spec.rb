@@ -22,6 +22,10 @@ RSpec.describe StaticPagesController, type: :controller do
       it "response successfully" do
         expect(response).to be_successful
       end
+
+      it "render home template" do
+        expect(response).to render_template(:home)
+      end
     end
 
     context "as a guest" do
@@ -36,42 +40,64 @@ RSpec.describe StaticPagesController, type: :controller do
       it "response successfully" do
         expect(response).to be_successful
       end
+
+      it "render home template" do
+        expect(response).to render_template(:home)
+      end
     end
   end
 
   describe "#about" do
-    it "returns 200 response" do
+    before do
       get :about
+    end
+
+    it "returns 200 response" do
       expect(response).to have_http_status(200)
     end
 
     it "response successfully" do
-      get :about
       expect(response).to be_successful
+    end
+
+    it "render about template" do
+      expect(response).to render_template(:about)
     end
   end
 
   describe "#help" do
-    it "returns 200 response" do
+    before do
       get :help
+    end
+
+    it "returns 200 response" do
       expect(response).to have_http_status(200)
     end
 
     it "response successfully" do
-      get :help
       expect(response).to be_successful
+    end
+
+    it "render help template" do
+      expect(response).to render_template(:help)
     end
   end
 
-  describe "#help" do
-    it "returns 200 response" do
+  describe "#contact" do
+    before do
       get :contact
+    end
+
+    it "returns 200 response" do
       expect(response).to have_http_status(200)
     end
 
     it "response successfully" do
-      get :contact
       expect(response).to be_successful
+    end
+
+    it "render contact template" do
+      expect(response).to render_template(:contact)
     end
   end
 end

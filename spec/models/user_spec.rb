@@ -48,6 +48,5 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_presence_of :height }
   end
 
-
   pending "add some examples to (or delete) #{__FILE__}"
 end

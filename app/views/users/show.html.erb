@@ -1,9 +1,9 @@
 <% provide(:title, @user.name) %>
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
   <div class="col-md-5 p-lg-5 mx-auto my-5">
-    <h3 class="display-4 font-weight-normal"><%= @user.name %></h3>
-    <h4>目標:<%= @user.aim %>kg</h4>
-    <h4>達成まで:<%= @user.by_target_weight %>kg</h4>
+    <h5><%= current_user.name %></h5>
+    <h6>目標:<%= current_user.aim %>kg</h6>
+    <h6>達成まで:<%= @user.by_target_weight %>kg</h6>
     <p class="lead font-weight-normal">
     <div class="start-info">
       <table>
@@ -16,7 +16,7 @@
         <tr>
           <td style="width: 200px">日時</td>
           <td style="width: 400px"><%= @user.started_at %></td>
-          <td style="width: 400px"><%= 100 - @posts.count %>日</td>
+          <td style="width: 400px"><%= (Date.today - @user.started_at + 1).to_i %>/100日目</td>
         </tr>
         <tr>
           <td style="width: 200px">体重</td>
@@ -26,7 +26,7 @@
         <tr>
           <td style="width: 200px">B M I</td>
           <td style="width: 400px"><%= @user.bmi %>%</td>
-          <td style="width: 400px"><%= @user.latest_bmi  %></td>
+          <td style="width: 400px"><%= @user.latest_bmi %>%</td>
         </tr>
         </tbody>
       </table>
