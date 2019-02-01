@@ -2,7 +2,7 @@
   <div class="col-md-5 p-lg-5 mx-auto my-5">
     <h5><%= current_user.name %></h5>
     <h6>目標:<%= current_user.aim %>kg</h6>
-    <h6>達成まで:<%= @by_achievement %>kg</h6>
+    <h6>達成まで:<%= current_user.by_target_weight %>kg</h6>
     <p class="lead font-weight-normal">
     <div class="start-info">
       <table>
@@ -20,12 +20,12 @@
         <tr>
           <td style="width: 200px">体重</td>
           <td style="width: 400px"><%= current_user.weight %>kg</td>
-          <td style="width: 400px"><%= @recent_weight %>kg</td>
+          <td style="width: 400px"><%= current_user.latest_weight %>kg</td>
         </tr>
         <tr>
           <td style="width: 200px">B M I</td>
-          <td style="width: 400px"><%= @first_bmi %>%</td>
-          <td style="width: 400px"><%= @recent_bmi %>%</td>
+          <td style="width: 400px"><%= current_user.bmi %>%</td>
+          <td style="width: 400px"><%= current_user.latest_bmi %>%</td>
         </tr>
         </tbody>
       </table>

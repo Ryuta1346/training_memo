@@ -9,8 +9,6 @@ class Post < ApplicationRecord
   #->validateメソッドは引数にシンボルを取り、そのシンボル名に対応したメソッドを呼び出す
   #   =自分オリジナルのvalidationを使える
 
-  # validate :one_post_per_day
-
   private
 
     def image_size

@@ -14,7 +14,7 @@
     </tr>
     <tr>
       <td class="content-in-card"><strong>B　M　I</strong></td>
-      <td class="card-in-table"><%= (@post.weight / current_user.height / current_user.height).round(2) %>%</td>
+      <td class="card-in-table"><%= (@post.weight / (@post.user.height**2)).round(2) %>%</td>
     </tr>
     <tr>
       <td class="content-in-card" ;><strong>トレーニング内容</strong></td>
