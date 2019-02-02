@@ -12,26 +12,26 @@ class User < ApplicationRecord
   end
 
   def latest_bmi
-    if posts.any?
-      (posts.first.weight.to_f / (height ** 2)).round(2)
-    else
+    if posts.ids.empty?
       bmi
+    else
+      (posts.first.weight / (height ** 2)).round(2)
     end
   end
 
   def latest_weight
-    if posts.any?
-      posts.first.weight
-    else
+    if posts.ids.empty?
       weight
+    else
+      posts.first.weight
     end
   end
 
   def by_target_weight
-    if posts.any?
-      (posts.first.weight.to_f - aim).round(2)
-    else
+    if posts.ids.empty?
       (weight - aim).round(2)
+    else
+      (posts.first.weight - aim).round(2)
     end
   end
 end

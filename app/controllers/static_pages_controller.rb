@@ -1,9 +1,8 @@
 class StaticPagesController < ApplicationController
   def home
     if user_signed_in?
-      @user  = User.find_by(id: current_user.id)
-      @posts = @user.posts.all
-      @post  = @user.posts.build
+      @posts = current_user.posts.all
+      @post  = current_user.posts.build
     end
   end
 
