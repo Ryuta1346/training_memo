@@ -1,21 +1,31 @@
 require 'rails_helper'
+
 RSpec.feature "Users", type: :feature do
-  # scenario "it creates new user" do
-  #   visit root_path
-  #   click_link "Sign Up Now!"
-  #   expect(page).to have_current_path " /users/sign_up"
-  #   expect do
-  #     fill_in "name", with: "Test User"
-  #     fill_in "email", with: "test_user@example.com"
-  #     fill_in "started_at", with: 2019-01-01
-  #     fill_in "finished_at", with: 2019-03-31
-  #     fill_in "weight", with: 88.88
-  #     fill_in "aim", with: 66.66
-  #     fill_in "height", with: 1.75
-  #
-  #     expect(page).to have_content "Welcome! You have signed up successfully."
-  #     expect(page).to have_content
-  #   end
-  # end
-  pending "add some scenarios (or delete) #{__FILE__}"
+  let!(:user) { create(:user) }
+  let!(:other_user) { create(:user) }
+  let!(:post){create(:post, user: user)}
+  let!(:other_post){create(:post, user: other_user)}
+
+  scenario "render users/index" do
+    visit users_path
+    expect(page).to have_css '.alert-alert'
+    expect(page).to have_current_path new_user_session_path
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
+    click_button "Log in"
+    expect(page).to have_content "Signed in successfully."
+    expect(page).to have_current_path root_path
+    visit users_path
+    expect(page).to have_css ".card-users"
+  end
+
+  scenario "render user page" do
+    visit new_user_session_path
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
+    click_button "Log in"
+    visit user_path(other_user.id)
+    expect(page).to have_css ".col-md-5.p-lg-5.mx-auto.my-5"
+    expect(page).to have_css ".card"
+  end
 end
