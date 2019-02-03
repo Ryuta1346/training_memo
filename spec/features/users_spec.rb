@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.feature "Users", type: :feature do
   let!(:user) { create(:user) }
   let!(:other_user) { create(:user) }
-  let!(:post){create(:post, user: user)}
-  let!(:other_post){create(:post, user: other_user)}
+  let!(:post) { create(:post, user: user) }
+  let!(:other_post) { create(:post, user: other_user) }
 
   scenario "render users/index" do
     visit users_path
