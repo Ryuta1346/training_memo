@@ -7,11 +7,17 @@ url: https://daily-training-2019.herokuapp.com/
 
 日々のトレーニングを記録することを目的としたアプリになっています。
 
-初めて作成したアプリということもあり、コード中に不要なコメントや悪いコードが多々ありますが、今後調整していく予定です。
+画像の投稿にはS3を利用し、保存するようにしています。
+
+###主な実装内容
+・S3を使った画像の保存
+
+・RSpecによるテストの導入(controller spec, model spec, features spec)
+
+・rubocopの導入
+
 
 ###今後の実装予定
-
-・RSpecの導入(controller spec, model specは実装済み)
 
 ・食事の記録機能
 
