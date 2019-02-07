@@ -24,14 +24,16 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body class="<%= 'landding-page' unless user_signed_in? %>">
-<%= render 'layouts/header' %>
-<div class="container">
-  <% flash.each do |message_type, message| %>
-    <div class="alert alert-<%= message_type %>"><%= message %></div>
-  <% end %>
-  <%= yield %>
-  <% render 'layouts/footer' %>
+<body>
+<div class="<%= "landding-page" unless user_signed_in? %>">
+  <%= render 'layouts/header' %>
+  <div class="container">
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <%= yield %>
+  </div>
 </div>
+<%= render 'layouts/footer' %>
 </body>
 </html>

@@ -9,7 +9,7 @@ RSpec.feature "StaticPages", type: :feature do
     expect(page).to have_current_path root_path
     expect(page).to have_title "100Days Of Training"
     within '#navbarSupportedContent' do
-      expect(page).to have_content "Home"
+      expect(page).to have_content "HOME"
       expect(page).to have_content "ABOUT"
       expect(page).to have_content "HELP"
       expect(page).to have_content "CONTACT"
