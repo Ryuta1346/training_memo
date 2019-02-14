@@ -40,11 +40,15 @@ RSpec.describe PostsController, type: :controller do
     context "as an authenticated user" do
       before do
         sign_in user
-        get :show, params: { id: post.id }
       end
 
       it "responds successfully" do
+        get :show, params: { id: post.id }
         expect(response).to be_successful
+      end
+
+      it "returns ActiveRecord::RecordNotFound" do
+        expect { get :show, params: { id: "not_exist_id" } }.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
 

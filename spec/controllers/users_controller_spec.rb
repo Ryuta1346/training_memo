@@ -33,33 +33,47 @@ RSpec.describe UsersController, type: :controller do
         expect(response).to redirect_to "/users/sign_in"
       end
     end
+  end
 
-    describe "#show" do
-      let!(:user) { create(:user) }
+  describe "#show" do
+    let!(:user) { create(:user) }
 
-      context "as an authenticated user" do
-        before do
-          sign_in user
-          get :show, params: { id: user.id }
-        end
-
-        it "responds successfully" do
-          expect(response).to be_successful
-        end
+    context "as an authenticated user" do
+      before do
+        sign_in user
+        get :show, params: { id: user.id }
       end
 
-      context "as a guest" do
-        before do
-          get :show, params: { id: user.id }
-        end
+      it "responds successfully" do
+        expect(response).to be_successful
+      end
 
-        it "returns 302 rensponse" do
-          expect(response).to have_http_status(302)
-        end
+      it "returns ActiveRecord::RecordNotFound" do
+        expect { get :show, params: { id: "not_exist_id" } }.to raise_error(ActiveRecord::RecordNotFound)
+      end
+    end
 
-        it "redirects to sign-in page" do
-          expect(response).to redirect_to "/users/sign_in"
-        end
+    context "as a guest" do
+      before do
+        get :show, params: { id: user.id }
+      end
+
+      it "returns 302 rensponse" do
+        expect(response).to have_http_status(302)
+      end
+
+      it "redirects to sign-in page" do
+        expect(response).to redirect_to "/users/sign_in"
+      end
+
+      it "returns 302 response" do
+        get :show, params: { id: "not_exist_id" }
+        expect(response).to have_http_status(302)
+      end
+
+      it "redirects to /users/sign_in" do
+        get :show, params: { id: "not_exist_id" }
+        expect(response).to redirect_to "/users/sign_in"
       end
     end
   end
