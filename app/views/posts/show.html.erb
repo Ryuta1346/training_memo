@@ -1,6 +1,6 @@
 <% provide(:title, @post.user.name) %>
 <div class="card-show">
-  <%= image_tag @post.image? ? @post.image.url(:medium) : ("crossfit-medium.jpg"), width: "100%" %>
+  <%= image_tag @post.image? ? @post.image.url(:medium) : ("crossfit-medium.jpg"), class: "post-img" %>
   <h4 class="card-title">開始から<%= (@post.date - @post.user.started_at + 1).to_i %>日目</h4>
   <table class="card-text" style="border-collapse: collapse;">
     <tbody>
