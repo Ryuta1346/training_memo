@@ -15,12 +15,8 @@ class User < ApplicationRecord
     (latest_weight / (height ** 2)).round(2)
   end
 
-  def first_weight
-    posts.first.weight
-  end
-
   def latest_weight
-    posts.ids.empty? ? weight : first_weight
+    posts.ids.empty? ? weight : posts.first.weight
   end
 
   def by_target_weight
