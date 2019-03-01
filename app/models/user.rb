@@ -7,31 +7,23 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   validates :name, :started_at, :aim, :weight, :height, presence: true
 
-  def bmi
+  def init_bmi
     (weight / (height ** 2)).round(2)
   end
 
   def latest_bmi
-    if posts.ids.empty?
-      bmi
-    else
-      (posts.first.weight / (height ** 2)).round(2)
-    end
+    (latest_weight / (height ** 2)).round(2)
+  end
+
+  def first_weight
+    posts.first.weight
   end
 
   def latest_weight
-    if posts.ids.empty?
-      weight
-    else
-      posts.first.weight
-    end
+    posts.ids.empty? ? weight : first_weight
   end
 
   def by_target_weight
-    if posts.ids.empty?
-      (weight - aim).round(2)
-    else
-      (posts.first.weight - aim).round(2)
-    end
+    (latest_weight - aim).round(2)
   end
 end
